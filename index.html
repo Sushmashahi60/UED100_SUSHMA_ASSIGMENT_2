@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UED100 Assessment 2 Prototype</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="font-inter bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md fixed w-full z-30">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="#" class="text-2xl font-bold text-indigo-600">BrandName</a>
+      <nav>
+        <button id="menu-btn" aria-label="Toggle Menu" class="md:hidden focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <ul id="menu" class="hidden md:flex space-x-8 text-lg" role="menubar" aria-label="Primary Navigation">
+          <li role="none"><a href="#hero" role="menuitem" class="hover:text-indigo-600 focus:outline-none focus:text-indigo-600">Home</a></li>
+          <li role="none"><a href="#features" role="menuitem" class="hover:text-indigo-600 focus:outline-none focus:text-indigo-600">Features</a></li>
+          <li role="none"><a href="#products" role="menuitem" class="hover:text-indigo-600 focus:outline-none focus:text-indigo-600">Products</a></li>
+          <li role="none"><a href="#contact" role="menuitem" class="hover:text-indigo-600 focus:outline-none focus:text-indigo-600">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="pt-20 bg-indigo-50 min-h-[70vh] flex items-center">
+    <div class="container mx-auto px-4 text-center md:text-left">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-indigo-700">Welcome to BrandName</h1>
+      <p class="text-lg md:text-xl mb-6 max-w-xl mx-auto md:mx-0 text-gray-700">
+        Delivering innovative solutions tailored to your business needs.
+      </p>
+      <a href="#products" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300">
+        Explore Products
+      </a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center text-indigo-700">Our Features</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <article class="p-6 bg-indigo-50 rounded-lg shadow hover:shadow-lg transition-shadow">
+          <svg class="w-12 h-12 mb-4 text-indigo-600 mx-auto md:mx-0" fill="none" stroke="currentColor" stroke-width="2" 
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 20h9"></path>
+            <path d="M12 4v16"></path>
+            <path d="M3 12h18"></path>
+          </svg>
+          <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Flexible Design</h3>
+          <p class="text-gray-700 text-center md:text-left">Adaptable UI that works seamlessly across devices and screen sizes.</p>
+        </article>
+        <article class="p-6 bg-indigo-50 rounded-lg shadow hover:shadow-lg transition-shadow">
+          <svg class="w-12 h-12 mb-4 text-indigo-600 mx-auto md:mx-0" fill="none" stroke="currentColor" stroke-width="2" 
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 6v6l4 2"></path>
+          </svg>
+          <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Performance</h3>
+          <p class="text-gray-700 text-center md:text-left">Optimized loading and minimal dependencies for fast user experience.</p>
+        </article>
+        <article class="p-6 bg-indigo-50 rounded-lg shadow hover:shadow-lg transition-shadow">
+          <svg class="w-12 h-12 mb-4 text-indigo-600 mx-auto md:mx-0" fill="none" stroke="currentColor" stroke-width="2" 
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h9a2 2 0 012 2z"></path>
+          </svg>
+          <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Accessibility</h3>
+          <p class="text-gray-700 text-center md:text-left">Designed with WCAG guidelines ensuring usability for all users.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-16 bg-indigo-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center text-indigo-700">Our Products</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
+          <img src="assets/images/product1.jpg" alt="Product 1" loading="lazy" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Product One</h3>
+            <p class="text-gray-700 mb-4">Innovative and reliable product to boost your productivity.</p>
+            <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300">
+              Learn More
+            </button>
+          </div>
+        </article>
+        <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
+          <img src="assets/images/product2.jpg" alt="Product 2" loading="lazy" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Product Two</h3>
+            <p class="text-gray-700 mb-4">Cutting-edge technology designed for modern workflows.</p>
+            <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300">
+              Learn More
+            </button>
+          </div>
+        </article>
+        <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
+          <img src="assets/images/product3.jpg" alt="Product 3" loading="lazy" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Product Three</h3>
+            <p class="text-gray-700 mb-4">Reliable and scalable solutions for your business growth.</p>
+            <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300">
+              Learn More
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-lg">
+      <h2 class="text-3xl font-bold mb-8 text-indigo-700 text-center">Contact Us</h2>
+      <form id="contact-form" class="space-y-6" aria-label="Contact form">
+        <div>
+          <label for="name" class="block mb-2 font-semibold">Name</label>
+          <input type="text" id="name" name="name" required
+            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600" />
+        </div>
+        <div>
+          <label for="email" class="block mb-2 font-semibold">Email</label>
+          <input type="email" id="email" name="email" required
+            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600" />
+        </div>
+        <div>
+          <label for="message" class="block mb-2 font-semibold">Message</label>
+          <textarea id="message" name="message" rows="4" required
+            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"></textarea>
+        </div>
+        <button type="submit"
+          class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300">
+          Send Message
+        </button>
+      </form>
+      <p id="form-status" class="mt-4 text-center text-green-600 hidden" role="alert" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-700 text-white py-6 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2024 BrandName. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
