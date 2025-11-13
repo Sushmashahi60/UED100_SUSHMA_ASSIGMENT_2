@@ -1,160 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UED100 Assessment 2 Prototype</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body class="font-inter bg-gray-50 text-gray-800">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commbank - Modern Banking UI</title>
 
-  <!-- Header -->
-  <header class="bg-white shadow-md fixed w-full z-30">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <a href="#" class="text-2xl font-bold text-indigo-600">BrandName</a>
-      <nav>
-        <button id="menu-btn" aria-label="Toggle Menu" class="md:hidden focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-        <ul id="menu" class="hidden md:flex space-x-8 text-lg" role="menubar" aria-label="Primary Navigation">
-          <li role="none"><a href="#hero" role="menuitem" class="hover:text-indigo-600 focus:outline-none focus:text-indigo-600">Home</a></li>
-          <li role="none"><a href="#features" role="menuitem" class="hover:text-indigo-600 focus:outline-none focus:text-indigo-600">Features</a></li>
-          <li role="none"><a href="#products" role="menuitem" class="hover:text-indigo-600 focus:outline-none focus:text-indigo-600">Products</a></li>
-          <li role="none"><a href="#contact" role="menuitem" class="hover:text-indigo-600 focus:outline-none focus:text-indigo-600">Contact</a></li>
-        </ul>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .brand-yellow {
+      background: linear-gradient(90deg, #ffd24a, #ffca28);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- ========= NAVBAR ========= -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
+          BS
+        </div>
+        <span class="font-semibold text-lg">BankStyle</span>
+      </div>
+
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="./" class="hover:text-yellow-600">Home</a>
+        <a href="./pages/about.html" class="hover:text-yellow-600">About</a>
+        <a href="./pages/services.html" class="hover:text-yellow-600">Services</a>
+        <a href="./pages/contact.html" class="hover:text-yellow-600">Contact</a>
       </nav>
+
+      <button id="menuBtn" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <a href="#" class="block px-4 py-3 hover:bg-gray-100">Personal</a>
+      <a href="#" class="block px-4 py-3 hover:bg-gray-100">Business</a>
+      <a href="#" class="block px-4 py-3 hover:bg-gray-100">Loans</a>
+      <a href="#" class="block px-4 py-3 hover:bg-gray-100">Support</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="pt-20 bg-indigo-50 min-h-[70vh] flex items-center">
-    <div class="container mx-auto px-4 text-center md:text-left">
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-indigo-700">Welcome to BrandName</h1>
-      <p class="text-lg md:text-xl mb-6 max-w-xl mx-auto md:mx-0 text-gray-700">
-        Delivering innovative solutions tailored to your business needs.
-      </p>
-      <a href="#products" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300">
-        Explore Products
+  <!-- ========= HERO SECTION ========= -->
+  <section class="bg-gradient-to-r from-yellow-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 md:grid md:grid-cols-2 gap-10 py-16">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+          Smarter Banking for a Better Tomorrow
+        </h1>
+        <p class="mt-4 text-gray-600 text-lg">
+          Manage your money, access intuitive tools, track spending and get more control over your financial life.
+        </p>
+
+        <div class="mt-8 flex gap-3">
+          <a href="#" class="bg-black text-white px-6 py-3 rounded-md text-sm hover:opacity-90">Open account</a>
+          <a href="#" class="border px-6 py-3 rounded-md text-sm hover:bg-gray-100">Explore products</a>
+        </div>
+      </div>
+
+      <div class="mt-10 md:mt-0">
+        <div class="bg-white rounded-xl shadow p-6">
+          <h3 class="font-semibold text-lg">Quick Balance Check (Demo)</h3>
+          <input type="text" placeholder="Enter account ID"
+            class="mt-4 w-full border rounded-md px-4 py-2" />
+          <button class="w-full mt-4 bg-black text-white py-3 rounded-md hover:opacity-90">
+            Check Balance
+          </button>
+          <p class="text-xs text-gray-500 mt-3">
+            This is a demo UI. Replace with real API integration.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= FEATURES ========= -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-10">What We Offer</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white shadow rounded-xl p-6">
+        <h3 class="font-semibold text-lg">Everyday Accounts</h3>
+        <p class="text-gray-600 text-sm mt-2">
+          Simple, fast and secure everyday banking tailored for your lifestyle.
+        </p>
+        <a href="#" class="text-yellow-600 mt-4 inline-block">Learn more →</a>
+      </div>
+
+      <div class="bg-white shadow rounded-xl p-6">
+        <h3 class="font-semibold text-lg">Home & Personal Loans</h3>
+        <p class="text-gray-600 text-sm mt-2">
+          Competitive rates, flexible repayments and easy application.
+        </p>
+        <a href="#" class="text-yellow-600 mt-4 inline-block">See offers →</a>
+      </div>
+
+      <div class="bg-white shadow rounded-xl p-6">
+        <h3 class="font-semibold text-lg">Mobile Banking App</h3>
+        <p class="text-gray-600 text-sm mt-2">
+          Track expenses, automate savings and send money instantly.
+        </p>
+        <a href="#" class="text-yellow-600 mt-4 inline-block">Explore app →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= CTA STRIP ========= -->
+  <section class="bg-yellow-100 py-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <h3 class="text-xl font-semibold">Switch to a smarter banking experience today</h3>
+      <a href="#" class="mt-4 md:mt-0 bg-black text-white px-6 py-3 rounded-md hover:opacity-90">
+        Get Started
       </a>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section id="features" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center text-indigo-700">Our Features</h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <article class="p-6 bg-indigo-50 rounded-lg shadow hover:shadow-lg transition-shadow">
-          <svg class="w-12 h-12 mb-4 text-indigo-600 mx-auto md:mx-0" fill="none" stroke="currentColor" stroke-width="2" 
-            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 20h9"></path>
-            <path d="M12 4v16"></path>
-            <path d="M3 12h18"></path>
-          </svg>
-          <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Flexible Design</h3>
-          <p class="text-gray-700 text-center md:text-left">Adaptable UI that works seamlessly across devices and screen sizes.</p>
-        </article>
-        <article class="p-6 bg-indigo-50 rounded-lg shadow hover:shadow-lg transition-shadow">
-          <svg class="w-12 h-12 mb-4 text-indigo-600 mx-auto md:mx-0" fill="none" stroke="currentColor" stroke-width="2" 
-            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 6v6l4 2"></path>
-          </svg>
-          <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Performance</h3>
-          <p class="text-gray-700 text-center md:text-left">Optimized loading and minimal dependencies for fast user experience.</p>
-        </article>
-        <article class="p-6 bg-indigo-50 rounded-lg shadow hover:shadow-lg transition-shadow">
-          <svg class="w-12 h-12 mb-4 text-indigo-600 mx-auto md:mx-0" fill="none" stroke="currentColor" stroke-width="2" 
-            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h9a2 2 0 012 2z"></path>
-          </svg>
-          <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Accessibility</h3>
-          <p class="text-gray-700 text-center md:text-left">Designed with WCAG guidelines ensuring usability for all users.</p>
-        </article>
+  <!-- ========= FOOTER ========= -->
+  <footer class="bg-white border-t mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex gap-3 items-center">
+          <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
+            BS
+          <span class="font-semibold text-lg">BankStyle</span>
+        </div>
+        <p class="text-gray-600 text-sm mt-3">A clean, modern banking UI demo. Replace placeholder content for production.</p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-2">Products</h4>
+        <ul class="text-sm text-gray-600 space-y-1">
+          <li><a href="#">Accounts</a></li>
+          <li><a href="#">Credit Cards</a></li>
+          <li><a href="#">Investments</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-2">Support</h4>
+        <ul class="text-sm text-gray-600 space-y-1">
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-2">Legal</h4>
+        <ul class="text-sm text-gray-600 space-y-1">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <!-- Products Section -->
-  <section id="products" class="py-16 bg-indigo-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center text-indigo-700">Our Products</h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
-          <img src="assets/images/product1.jpg" alt="Product 1" loading="lazy" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Product One</h3>
-            <p class="text-gray-700 mb-4">Innovative and reliable product to boost your productivity.</p>
-            <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300">
-              Learn More
-            </button>
-          </div>
-        </article>
-        <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
-          <img src="assets/images/product2.jpg" alt="Product 2" loading="lazy" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Product Two</h3>
-            <p class="text-gray-700 mb-4">Cutting-edge technology designed for modern workflows.</p>
-            <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300">
-              Learn More
-            </button>
-          </div>
-        </article>
-        <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
-          <img src="assets/images/product3.jpg" alt="Product 3" loading="lazy" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Product Three</h3>
-            <p class="text-gray-700 mb-4">Reliable and scalable solutions for your business growth.</p>
-            <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300">
-              Learn More
-            </button>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-white">
-    <div class="container mx-auto px-4 max-w-lg">
-      <h2 class="text-3xl font-bold mb-8 text-indigo-700 text-center">Contact Us</h2>
-      <form id="contact-form" class="space-y-6" aria-label="Contact form">
-        <div>
-          <label for="name" class="block mb-2 font-semibold">Name</label>
-          <input type="text" id="name" name="name" required
-            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600" />
-        </div>
-        <div>
-          <label for="email" class="block mb-2 font-semibold">Email</label>
-          <input type="email" id="email" name="email" required
-            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600" />
-        </div>
-        <div>
-          <label for="message" class="block mb-2 font-semibold">Message</label>
-          <textarea id="message" name="message" rows="4" required
-            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"></textarea>
-        </div>
-        <button type="submit"
-          class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300">
-          Send Message
-        </button>
-      </form>
-      <p id="form-status" class="mt-4 text-center text-green-600 hidden" role="alert" aria-live="polite"></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-indigo-700 text-white py-6 mt-12">
-    <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2024 BrandName. All rights reserved.</p>
+    <div class="border-t py-4 text-center text-sm text-gray-500">
+      © <span id="year"></span> BankStyle — UI Prototype
     </div>
   </footer>
 
-  <script src="./js/main.js"></script>
+  <!-- ========= SCRIPT ========= -->
+  <script>
+    // Mobile menu toggle
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+
+    // Dynamic copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
+
 </html>

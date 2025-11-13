@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - BankStyle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .brand-yellow {
+            background: linear-gradient(90deg, #ffd24a, #ffca28);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- ========= NAVBAR ========= -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
+                    BS
+                </div>
+                <span class="font-semibold text-lg">BankStyle</span>
+            </div>
+
+            <nav class="hidden md:flex gap-6 text-sm">
+                <a href="../index.html" class="hover:text-yellow-600">Home</a>
+                <a href="about.html" class="hover:text-yellow-600">About</a>
+                <a href="services.html" class="text-yellow-600 font-semibold">Services</a>
+                <a href="contact.html" class="hover:text-yellow-600">Contact</a>
+            </nav>
+
+            <button id="menuBtn" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <a href="../index.html" class="block px-4 py-3 hover:bg-gray-100">Home</a>
+            <a href="about.html" class="block px-4 py-3 hover:bg-gray-100">About</a>
+            <a href="services.html" class="block px-4 py-3 hover:bg-gray-100">Services</a>
+            <a href="contact.html" class="block px-4 py-3 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <!-- ========= HERO SECTION ========= -->
+    <section class="bg-gradient-to-r from-yellow-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 py-16 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight text-gray-800">
+                Our Banking Services
+            </h1>
+            <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
+                Comprehensive financial solutions tailored to your needs
+            </p>
+        </div>
+    </section>
+
+    <!-- ========= SERVICES GRID ========= -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition-shadow">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Personal Banking</h3>
+                <ul class="space-y-3 text-gray-600 text-sm">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Savings Accounts
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Checking Accounts
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Fixed Deposits
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Personal Loans
+                    </li>
+                </ul>
+                <a href="#" class="text-yellow-600 mt-4 inline-block text-sm">Learn more →</a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition-shadow">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Business Banking</h3>
+                <ul class="space-y-3 text-gray-600 text-sm">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Business Accounts
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Commercial Loans
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Merchant Services
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Cash Management
+                    </li>
+                </ul>
+                <a href="#" class="text-yellow-600 mt-4 inline-block text-sm">See offers →</a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition-shadow">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Digital Services</h3>
+                <ul class="space-y-3 text-gray-600 text-sm">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Online Banking
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Mobile App
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Bill Pay
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Fund Transfers
+                    </li>
+                </ul>
+                <a href="#" class="text-yellow-600 mt-4 inline-block text-sm">Explore app →</a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition-shadow">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Investment Services</h3>
+                <ul class="space-y-3 text-gray-600 text-sm">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Mutual Funds
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Retirement Planning
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Investment Advisory
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                        Insurance
+                    </li>
+                </ul>
+                <a href="#" class="text-yellow-600 mt-4 inline-block text-sm">Get started →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= CTA STRIP ========= -->
+    <section class="bg-yellow-100 py-10">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <h3 class="text-xl font-semibold">Ready to get started with our services?</h3>
+            <a href="#" class="mt-4 md:mt-0 bg-black text-white px-6 py-3 rounded-md hover:opacity-90">
+                Contact Us
+            </a>
+        </div>
+    </section>
+
+    <!-- ========= FOOTER ========= -->
+    <footer class="bg-white border-t mt-12">
+        <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex gap-3 items-center">
+                    <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
+                        BS
+                    </div>
+                    <span class="font-semibold text-lg">BankStyle</span>
+                </div>
+                <p class="text-gray-600 text-sm mt-3">Modern banking solutions for your financial needs.</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-2">Products</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                    <li><a href="#" class="hover:text-yellow-600">Accounts</a></li>
+                    <li><a href="#" class="hover:text-yellow-600">Loans</a></li>
+                    <li><a href="#" class="hover:text-yellow-600">Investments</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-2">Support</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                    <li><a href="#" class="hover:text-yellow-600">Help Center</a></li>
+                    <li><a href="#" class="hover:text-yellow-600">Security</a></li>
+                    <li><a href="#" class="hover:text-yellow-600">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-2">Legal</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                    <li><a href="#" class="hover:text-yellow-600">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-yellow-600">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-yellow-600">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t py-4 text-center text-sm text-gray-500">
+            © <span id="year"></span> BankStyle — All rights reserved
+        </div>
+    </footer>
+
+    <!-- ========= SCRIPT ========= -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById("menuBtn").addEventListener("click", () => {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        });
+
+        // Dynamic copyright year
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
