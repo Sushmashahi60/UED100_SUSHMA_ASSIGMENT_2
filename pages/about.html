@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - BankStyle</title>
+    <title>About Us - CommBank</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css" />
     
     <style>
         .brand-yellow {
@@ -13,93 +14,263 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800">
     <!-- ========= NAVBAR ========= -->
-    <header class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
-                    BS
-                </div>
-                <span class="font-semibold text-lg">BankStyle</span>
-            </div>
-
-            <nav class="hidden md:flex gap-6 text-sm">
-                <a href="../index.html" class="hover:text-yellow-600">Home</a>
-                <a href="about.html" class="text-yellow-600 font-semibold">About</a>
-                <a href="services.html" class="hover:text-yellow-600">Services</a>
-                <a href="contact.html" class="hover:text-yellow-600">Contact</a>
-            </nav>
-
-            <button id="menuBtn" class="md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
+  <header class="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Main header -->
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm">
+            <span class="font-bold text-sm text-black">BS</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-xl text-gray-900">CommBank</span>
+            <span class="text-xs text-gray-500 -mt-1">Trusted Banking</span>
+          </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-            <a href="../index.html" class="block px-4 py-3 hover:bg-gray-100">Home</a>
-            <a href="about.html" class="block px-4 py-3 hover:bg-gray-100 bg-yellow-50">About</a>
-            <a href="services.html" class="block px-4 py-3 hover:bg-gray-100">Services</a>
-            <a href="contact.html" class="block px-4 py-3 hover:bg-gray-100">Contact</a>
-        </div>
-    </header>
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <div class="flex gap-6">
+             <a href="../index.html" class="link">Home</a>
+            <a href="./about.html" class="active-link">About</a>
+            <a href="./services.html" class="link">Services</a>
+            <a href="./contact.html" class="link">Contact</a>
+          </div>
+          
+          <!-- Login Buttons -->
+          <div class="flex items-center gap-3 ml-6 pl-6 border-l border-gray-200">
+            <a href="./login.html" class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm">
+              Login
+            </a>
+          </div>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+        <div class="py-4 space-y-1">
+          <a href="../index.html" class="link">Home</a>
+          <a href="./about.html" class="active-link">About</a>
+          <a href="./services.html" class="link">Services</a>
+          <a href="./contact.html" class="link">Contact</a>
+          
+          <!-- Mobile CTA -->
+           <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
+            <a href="./login.html" class="block text-center text-gray-700 hover:text-gray-900 py-2 text-sm font-medium">Login</a>
+          </div>
+      </div>
+    </div>
+  </header>
+
 
     <main class="flex-grow">
         <!-- Hero Section -->
-        <section class="bg-gradient-to-r from-yellow-50 to-white py-16 text-center">
-            <div class="max-w-7xl mx-auto px-4">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">About BankStyle</h1>
+        <section class="bg-gradient-to-r from-yellow-50 to-white py-16 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-yellow-100/20 to-transparent"></div>
+            <div class="max-w-7xl mx-auto px-4 relative z-10">
+                <div class="inline-block p-4 bg-yellow-100 rounded-full mb-6">
+                    <svg class="w-12 h-12 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"/>
+                    </svg>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">About CommBank</h1>
                 <p class="text-xl text-gray-600">Your trusted financial partner since 1985</p>
+                <div class="mt-8 flex justify-center gap-8 text-sm text-gray-500">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        35+ Years Experience
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                        50,000+ Happy Customers
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+                        Award Winning Service
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="bg-white py-12 border-b">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="group">
+                        <div class="text-3xl font-bold text-yellow-600 mb-2 group-hover:scale-110 transition-transform">$2.5B+</div>
+                        <div class="text-sm text-gray-600">Assets Under Management</div>
+                    </div>
+                    <div class="group">
+                        <div class="text-3xl font-bold text-yellow-600 mb-2 group-hover:scale-110 transition-transform">50,000+</div>
+                        <div class="text-sm text-gray-600">Active Customers</div>
+                    </div>
+                    <div class="group">
+                        <div class="text-3xl font-bold text-yellow-600 mb-2 group-hover:scale-110 transition-transform">25</div>
+                        <div class="text-sm text-gray-600">Branch Locations</div>
+                    </div>
+                    <div class="group">
+                        <div class="text-3xl font-bold text-yellow-600 mb-2 group-hover:scale-110 transition-transform">24/7</div>
+                        <div class="text-sm text-gray-600">Customer Support</div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- About Content -->
         <section class="max-w-7xl mx-auto px-4 py-16">
             <div class="max-w-4xl mx-auto space-y-12">
-                <div class="bg-white shadow rounded-xl p-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Story</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed">BankStyle has been serving our local community for over 35 years, providing reliable banking services and building lasting relationships with our customers. We've evolved from a traditional community bank to a modern financial institution that embraces technology while maintaining our personal touch.</p>
+                <!-- Our Story -->
+                <div class="bg-white shadow-lg rounded-xl p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800">Our Story</h2>
+                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed">CommBank has been serving our local community for over 35 years, providing reliable banking services and building lasting relationships with our customers. We've evolved from a traditional community bank to a modern financial institution that embraces technology while maintaining our personal touch.</p>
+                    <div class="mt-6 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                        <p class="text-yellow-800 font-medium">Founded in 1985, we started with just 5 employees and a vision to serve our community better.</p>
+                    </div>
                 </div>
                 
-                <div class="bg-white shadow rounded-xl p-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
+                <!-- Our Mission -->
+                <div class="bg-white shadow-lg rounded-xl p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800">Our Mission</h2>
+                    </div>
                     <p class="text-gray-600 text-lg leading-relaxed">To provide exceptional banking services while supporting the growth and prosperity of our community through personalized financial solutions, innovative technology, and unwavering commitment to customer satisfaction.</p>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl mb-2">🎯</div>
+                            <div class="font-semibold text-blue-800">Excellence</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl mb-2">🤝</div>
+                            <div class="font-semibold text-blue-800">Partnership</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl mb-2">💡</div>
+                            <div class="font-semibold text-blue-800">Innovation</div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="bg-white shadow rounded-xl p-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Values</h2>
-                    <ul class="grid md:grid-cols-2 gap-4 text-gray-600 text-lg">
-                        <li class="flex items-center gap-3">
-                            <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                            Trust and Integrity
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                            Customer-Centric Service
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                            Community Support
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                            Financial Innovation
-                        </li>
-                    </ul>
+                <!-- Our Values -->
+                <div class="bg-white shadow-lg rounded-xl p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800">Our Values</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6 text-gray-600 text-lg">
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-yellow-50 transition-colors">
+                            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <span class="font-semibold">Trust and Integrity</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-yellow-50 transition-colors">
+                            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                </svg>
+                            </div>
+                            <span class="font-semibold">Customer-Centric Service</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-yellow-50 transition-colors">
+                            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                                </svg>
+                            </div>
+                            <span class="font-semibold">Community Support</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-yellow-50 transition-colors">
+                            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                            <span class="font-semibold">Financial Innovation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="bg-white shadow-lg rounded-xl p-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Journey</h2>
+                    <div class="relative">
+                        <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-yellow-300"></div>
+                        <div class="space-y-8">
+                            <div class="flex gap-6">
+                                <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-white shadow-lg">1985</div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Founded</h3>
+                                    <p class="text-gray-600">Started as a small community bank</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-white shadow-lg">2000</div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Digital Era</h3>
+                                    <p class="text-gray-600">Launched online banking services</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-white shadow-lg">2020</div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Mobile First</h3>
+                                    <p class="text-gray-600">Complete mobile banking transformation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Strip -->
-        <section class="bg-yellow-100 py-10">
+        <section class="bg-gradient-to-r from-yellow-400 to-yellow-500 py-12">
             <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-                <h3 class="text-xl font-semibold">Ready to experience smarter banking?</h3>
-                <a href="../contact.html" class="mt-4 md:mt-0 bg-black text-white px-6 py-3 rounded-md hover:opacity-90">
-                    Contact Us Today
-                </a>
+                <div class="text-center md:text-left mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold text-black mb-2">Ready to experience smarter banking?</h3>
+                    <p class="text-black/80">Join thousands of satisfied customers today</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="../contact.html" class="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors shadow-lg flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        Contact Us Today
+                    </a>
+                    <a href="../pages/login.html" class="bg-white text-black px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                        Get Started
+                    </a>
+                </div>
             </div>
         </section>
     </main>
@@ -112,7 +283,7 @@
                     <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
                         BS
                     </div>
-                    <span class="font-semibold text-lg">BankStyle</span>
+                    <span class="font-semibold text-lg">CommBank</span>
                 </div>
                 <p class="text-gray-600 text-sm mt-3">A modern banking experience focused on community growth and customer satisfaction.</p>
             </div>
@@ -120,33 +291,33 @@
             <div>
                 <h4 class="font-semibold mb-2">Products</h4>
                 <ul class="text-sm text-gray-600 space-y-1">
-                    <li><a href="#" class="hover:text-yellow-600">Accounts</a></li>
-                    <li><a href="#" class="hover:text-yellow-600">Credit Cards</a></li>
-                    <li><a href="#" class="hover:text-yellow-600">Investments</a></li>
+                    <li><a href="#" class="">Accounts</a></li>
+                    <li><a href="#" class="">Credit Cards</a></li>
+                    <li><a href="#" class="">Investments</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4 class="font-semibold mb-2">Support</h4>
                 <ul class="text-sm text-gray-600 space-y-1">
-                    <li><a href="#" class="hover:text-yellow-600">Help Center</a></li>
-                    <li><a href="#" class="hover:text-yellow-600">Security</a></li>
-                    <li><a href="contact.html" class="hover:text-yellow-600">Contact Us</a></li>
+                    <li><a href="#" class="">Help Center</a></li>
+                    <li><a href="#" class="">Security</a></li>
+                    <li><a href="contact.html" class="">Contact Us</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4 class="font-semibold mb-2">Legal</h4>
                 <ul class="text-sm text-gray-600 space-y-1">
-                    <li><a href="#" class="hover:text-yellow-600">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-yellow-600">Terms & Conditions</a></li>
-                    <li><a href="#" class="hover:text-yellow-600">Accessibility</a></li>
+                    <li><a href="#" class="">Privacy Policy</a></li>
+                    <li><a href="#" class="">Terms & Conditions</a></li>
+                    <li><a href="#" class="">Accessibility</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="border-t py-4 text-center text-sm text-gray-500">
-            © <span id="year"></span> BankStyle — All rights reserved
+            © <span id="year"></span> CommBank — All rights reserved
         </div>
     </footer>
 

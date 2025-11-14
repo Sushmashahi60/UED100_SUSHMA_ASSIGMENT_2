@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - BankStyle</title>
+    <title>Contact Us - CommBank</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css">
 
     <style>
         .brand-yellow {
@@ -19,180 +20,378 @@
 <body class="bg-gray-50 text-gray-800">
 
     <!-- ========= NAVBAR ========= -->
-    <header class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
-                    BS
-                </div>
-                <span class="font-semibold text-lg">BankStyle</span>
-            </div>
-
-            <nav class="hidden md:flex gap-6 text-sm">
-                <a href="../index.html" class="hover:text-yellow-600">Home</a>
-                <a href="./about.html" class="hover:text-yellow-600">About</a>
-                <a href="#" class="hover:text-yellow-600">Services</a>
-                <a href="./contact.html" class="text-yellow-600 font-semibold">Contact</a>
-            </nav>
-
-            <button id="menuBtn" class="md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
+   <header class="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Main header -->
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm">
+            <span class="font-bold text-sm text-black">BS</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-xl text-gray-900">CommBank</span>
+            <span class="text-xs text-gray-500 -mt-1">Trusted Banking</span>
+          </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-            <a href="../index.html" class="block px-4 py-3 hover:bg-gray-100">Home</a>
-            <a href="./about.html" class="block px-4 py-3 hover:bg-gray-100">About</a>
-            <a href="#" class="block px-4 py-3 hover:bg-gray-100">Services</a>
-            <a href="./contact.html" class="block px-4 py-3 bg-gray-100">Contact</a>
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <div class="flex gap-6">
+              <a href="../index.html" class="link">Home</a>
+            <a href="./about.html" class="link">About</a>
+            <a href="./services.html" class="link">Services</a>
+            <a href="./contact.html" class="active-link">Contact</a>
+          </div>
+          
+          <!-- Login Buttons -->
+          <div class="flex items-center gap-3 ml-6 pl-6 border-l border-gray-200">
+            <a href="./login.html" class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm">
+              Login
+            </a>
+          </div>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+        <div class="py-4 space-y-1">
+          <a href="./" class="link">Home</a>
+          <a href="./about.html" class="link">About</a>
+          <a href="./services.html" class="link">Services</a>
+          <a href="./contact.html" class="active-link">Contact</a>
+          
+          <!-- Mobile CTA -->
+           <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
+            <a href="./login.html" class="block text-center text-gray-700 hover:text-gray-900 py-2 text-sm font-medium">Login</a>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
     <!-- ========= HERO SECTION ========= -->
-    <section class="bg-gradient-to-r from-yellow-50 to-white">
-        <div class="max-w-7xl mx-auto px-4 py-16 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold leading-tight">
-                Get in Touch
+    <section class="bg-gradient-to-br from-yellow-50 via-white to-blue-50 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-yellow-200 rounded-full opacity-20 animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-24 h-24 bg-blue-200 rounded-full opacity-30 animate-bounce"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 py-20 text-center relative z-10">
+            <div class="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-sm border mb-6">
+                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span class="text-sm font-medium text-gray-700">We're here to help 24/7</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+                Let's Connect
             </h1>
-            <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
-                We're here to help with all your banking needs. Contact our expert team for personalized assistance.
+            <p class="mt-6 text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
+                Experience personalized banking support with our award-winning customer service team. 
+                We're committed to making your financial journey seamless and secure.
             </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <a href="#contact-form" class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-xl font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Start Conversation
+                </a>
+                <a href="tel:1-800-BANK-STYLE" class="flex items-center gap-2 bg-white text-gray-700 px-8 py-4 rounded-xl font-semibold border-2 border-gray-200 hover:border-yellow-400 transition-all duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                    Call Now
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- ========= CONTACT METHODS ========= -->
-    <section class="max-w-7xl mx-auto px-4 py-16">
+    <section class="max-w-7xl mx-auto px-4 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Multiple Ways to Reach Us</h2>
+            <p class="text-gray-600 text-lg">Choose the method that works best for you</p>
+        </div>
+        
         <div class="grid md:grid-cols-3 gap-8 mb-16">
-            <div class="bg-white shadow rounded-xl p-6 text-center">
-                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="group bg-white shadow-lg rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                     </svg>
                 </div>
-                <h3 class="font-semibold text-lg mb-2">Call Us</h3>
-                <p class="text-gray-600 text-sm mb-3">Speak to our customer service team</p>
-                <p class="text-black font-semibold">1-800-BANK-STYLE</p>
-                <p class="text-xs text-gray-500 mt-2">Mon-Fri: 8AM-8PM | Sat: 9AM-5PM</p>
+                <h3 class="font-bold text-xl mb-3">Phone Support</h3>
+                <p class="text-gray-600 mb-4">Instant help from our expert advisors</p>
+                <p class="text-black font-bold text-lg mb-2">1-800-COMM-BANK</p>
+                <div class="bg-green-50 rounded-lg p-3 mb-4">
+                    <p class="text-sm text-green-700 font-medium">🕒 Available 24/7 for emergencies</p>
+                    <p class="text-xs text-green-600 mt-1">Mon-Fri: 7AM-9PM | Weekends: 9AM-6PM</p>
+                </div>
+                <a href="tel:1-800-COMM-BANK" class="inline-flex items-center gap-2 text-yellow-600 font-semibold hover:text-yellow-700 transition-colors">
+                    Call Now <span>→</span>
+                </a>
             </div>
 
-            <div class="bg-white shadow rounded-xl p-6 text-center">
-                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            <div class="group bg-white shadow-lg rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                     </svg>
                 </div>
-                <h3 class="font-semibold text-lg mb-2">Email Support</h3>
-                <p class="text-gray-600 text-sm mb-3">Send us your questions anytime</p>
-                <p class="text-black font-semibold">support@bankstyle.com</p>
-                <p class="text-xs text-gray-500 mt-2">We respond within 24 hours</p>
+                <h3 class="font-bold text-xl mb-3">Live Chat</h3>
+                <p class="text-gray-600 mb-4">Real-time messaging with our team</p>
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <p class="text-green-600 font-semibold">Online Now</p>
+                </div>
+                <div class="bg-blue-50 rounded-lg p-3 mb-4">
+                    <p class="text-sm text-blue-700 font-medium">⚡ Average response: 30 seconds</p>
+                    <p class="text-xs text-blue-600 mt-1">Available during business hours</p>
+                </div>
+                <button class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                    Start Chat <span>💬</span>
+                </button>
             </div>
 
-            <div class="bg-white shadow rounded-xl p-6 text-center">
-                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="group bg-white shadow-lg rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                     </svg>
                 </div>
-                <h3 class="font-semibold text-lg mb-2">Visit Branch</h3>
-                <p class="text-gray-600 text-sm mb-3">Find a branch near you</p>
-                <p class="text-black font-semibold">250+ Locations</p>
-                <a href="#" class="text-yellow-600 text-sm mt-2 inline-block">Find nearest branch →</a>
+                <h3 class="font-bold text-xl mb-3">Branch Locations</h3>
+                <p class="text-gray-600 mb-4">Personal service at 350+ locations</p>
+                <p class="text-black font-bold text-lg mb-2">Find Nearest Branch</p>
+                <div class="bg-purple-50 rounded-lg p-3 mb-4">
+                    <p class="text-sm text-purple-700 font-medium">🏦 Full-service banking available</p>
+                    <p class="text-xs text-purple-600 mt-1">Extended hours at select locations</p>
+                </div>
+                <a href="#" class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-700 transition-colors">
+                    Locate Branch <span>🗺️</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- ========= CONTACT FORM ========= -->
-    <section class="max-w-4xl mx-auto px-4 pb-16">
-        <div class="bg-white shadow rounded-xl p-8">
-            <h2 class="text-3xl font-bold mb-6 text-center">Send Us a Message</h2>
-            
-            <form class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-sm font-medium mb-2">First Name *</label>
-                    <input type="text" required class="w-full border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
-                </div>
+    <section id="contact-form" class="bg-gradient-to-br from-gray-50 to-white py-20">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-white shadow-2xl rounded-3xl overflow-hidden">
+                <div class="grid lg:grid-cols-2">
+                    <!-- Form Side -->
+                    <div class="p-10">
+                        <div class="mb-8">
+                            <h2 class="text-4xl font-bold mb-4">Send Us a Message</h2>
+                            <p class="text-gray-600">Fill out the form below and we'll get back to you within 2 hours during business hours.</p>
+                        </div>
+                        
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-3 text-gray-700">First Name *</label>
+                                    <input type="text" required class="w-full border-2 border-gray-200 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-500 transition-colors duration-200" placeholder="John" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-3 text-gray-700">Last Name *</label>
+                                    <input type="text" required class="w-full border-2 border-gray-200 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-500 transition-colors duration-200" placeholder="Doe" />
+                                </div>
+                            </div>
 
-                <div>
-                    <label class="block text-sm font-medium mb-2">Last Name *</label>
-                    <input type="text" required class="w-full border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
-                </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-3 text-gray-700">Email Address *</label>
+                                    <input type="email" required class="w-full border-2 border-gray-200 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-500 transition-colors duration-200" placeholder="john@example.com" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-3 text-gray-700">Phone Number</label>
+                                    <input type="tel" class="w-full border-2 border-gray-200 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-500 transition-colors duration-200" placeholder="+1 (555) 123-4567" />
+                                </div>
+                            </div>
 
-                <div>
-                    <label class="block text-sm font-medium mb-2">Email *</label>
-                    <input type="email" required class="w-full border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
-                </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-3 text-gray-700">How can we help you? *</label>
+                                <select required class="w-full border-2 border-gray-200 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-500 transition-colors duration-200 bg-white">
+                                    <option value="">Select a topic...</option>
+                                    <option value="account">💳 Account Services</option>
+                                    <option value="loans">🏠 Loans & Mortgages</option>
+                                    <option value="investments">📈 Investment Planning</option>
+                                    <option value="cards">💎 Credit Cards</option>
+                                    <option value="business">🏢 Business Banking</option>
+                                    <option value="technical">⚙️ Technical Support</option>
+                                    <option value="feedback">💭 Feedback & Suggestions</option>
+                                </select>
+                            </div>
 
-                <div>
-                    <label class="block text-sm font-medium mb-2">Phone Number</label>
-                    <input type="tel" class="w-full border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
-                </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-3 text-gray-700">Your Message *</label>
+                                <textarea required rows="5" class="w-full border-2 border-gray-200 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-500 transition-colors duration-200 resize-none" placeholder="Tell us how we can assist you today..."></textarea>
+                            </div>
 
-                <div class="md:col-span-2">
-                    <label class="block text-sm font-medium mb-2">Subject *</label>
-                    <select required class="w-full border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                        <option value="">Select a topic</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="account">Account Support</option>
-                        <option value="loans">Loans & Mortgages</option>
-                        <option value="cards">Credit Cards</option>
-                        <option value="technical">Technical Support</option>
-                        <option value="feedback">Feedback</option>
-                    </select>
-                </div>
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="privacy" class="mt-2 w-4 h-4 text-yellow-500" required />
+                                <label for="privacy" class="text-sm text-gray-600 leading-relaxed">
+                                    I agree to CommBank's <a href="#" class="text-yellow-600 hover:underline font-semibold">Privacy Policy</a> and consent to being contacted regarding my inquiry. Your information is secure and never shared with third parties. *
+                                </label>
+                            </div>
 
-                <div class="md:col-span-2">
-                    <label class="block text-sm font-medium mb-2">Message *</label>
-                    <textarea required rows="5" class="w-full border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Tell us how we can help you..."></textarea>
-                </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black py-5 rounded-xl hover:from-yellow-500 hover:to-yellow-600 font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                Send Message 📤
+                            </button>
+                        </form>
+                    </div>
 
-                <div class="md:col-span-2">
-                    <div class="flex items-start gap-3">
-                        <input type="checkbox" id="privacy" class="mt-1" required />
-                        <label for="privacy" class="text-sm text-gray-600">
-                            I agree to the <a href="#" class="text-yellow-600 hover:underline">Privacy Policy</a> and consent to being contacted by BankStyle regarding my inquiry. *
-                        </label>
+                    <!-- Info Side -->
+                    <div class="bg-gradient-to-br from-yellow-400 to-yellow-500 p-10 flex flex-col justify-center text-black">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-4">Why Choose CommBank?</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-black bg-opacity-20 rounded-full flex items-center justify-center">
+                                        <span class="text-sm">⭐</span>
+                                    </div>
+                                    <span class="font-semibold">4.9/5 Customer Satisfaction</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-black bg-opacity-20 rounded-full flex items-center justify-center">
+                                        <span class="text-sm">🛡️</span>
+                                    </div>
+                                    <span class="font-semibold">Bank-Grade Security</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-black bg-opacity-20 rounded-full flex items-center justify-center">
+                                        <span class="text-sm">⚡</span>
+                                    </div>
+                                    <span class="font-semibold">2-Hour Response Time</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-black bg-opacity-10 rounded-2xl p-6">
+                            <h4 class="font-bold mb-3">Quick Contact Options</h4>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <span>📞</span>
+                                    <span>Emergency: 1-800-EMERGENCY</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span>📧</span>
+                                    <span>support@commbank.com</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span>💬</span>
+                                    <span>Live chat available 24/7</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="md:col-span-2">
-                    <button type="submit" class="w-full bg-black text-white py-4 rounded-md hover:opacity-90 font-semibold">
-                        Send Message
-                    </button>
-                </div>
-            </form>
+            </div>
         </div>
     </section>
 
     <!-- ========= FAQ SECTION ========= -->
-    <section class="bg-yellow-50 py-16">
+    <section class="py-20">
         <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 text-lg">Quick answers to common questions</p>
+            </div>
             
-            <div class="space-y-4">
-                <details class="bg-white rounded-lg p-6 shadow">
-                    <summary class="font-semibold cursor-pointer">What are your customer service hours?</summary>
-                    <p class="mt-3 text-gray-600">Our customer service is available Monday-Friday 8AM-8PM, and Saturday 9AM-5PM. Emergency support is available 24/7 for account security issues.</p>
+            <div class="space-y-6">
+                <details class="group bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <summary class="font-bold text-lg cursor-pointer flex items-center justify-between">
+                        <span class="flex items-center gap-3">
+                            <span class="text-2xl">🕒</span>
+                            What are your customer service hours?
+                        </span>
+                        <span class="text-yellow-500 group-open:rotate-180 transition-transform duration-300">▼</span>
+                    </summary>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <p class="text-gray-600 leading-relaxed">Our customer service team is available <strong>Monday-Friday 7AM-9PM</strong> and <strong>weekends 9AM-6PM</strong>. For urgent account security issues, our emergency line operates 24/7 at 1-800-EMERGENCY.</p>
+                        <div class="mt-4 bg-green-50 p-4 rounded-lg">
+                            <p class="text-green-700 text-sm font-medium">💡 Pro Tip: Use our mobile app for instant account access and basic transactions outside business hours!</p>
+                        </div>
+                    </div>
                 </details>
 
-                <details class="bg-white rounded-lg p-6 shadow">
-                    <summary class="font-semibold cursor-pointer">How can I open a new account?</summary>
-                    <p class="mt-3 text-gray-600">You can open an account online, over the phone, or by visiting any of our branch locations. You'll need a valid ID and proof of address to get started.</p>
+                <details class="group bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <summary class="font-bold text-lg cursor-pointer flex items-center justify-between">
+                        <span class="flex items-center gap-3">
+                            <span class="text-2xl">🏦</span>
+                            How can I open a new account online?
+                        </span>
+                        <span class="text-yellow-500 group-open:rotate-180 transition-transform duration-300">▼</span>
+                    </summary>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <p class="text-gray-600 leading-relaxed mb-4">Opening an account is simple and takes just 5-10 minutes online. You'll need:</p>
+                        <ul class="text-gray-600 space-y-2 ml-6">
+                            <li class="flex items-center gap-2">✅ Valid government-issued ID</li>
+                            <li class="flex items-center gap-2">✅ Proof of address (utility bill or lease)</li>
+                            <li class="flex items-center gap-2">✅ Social Security Number</li>
+                            <li class="flex items-center gap-2">✅ Initial deposit ($25 minimum)</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="#" class="inline-flex items-center gap-2 bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+                                Start Application 🚀
+                            </a>
+                        </div>
+                    </div>
                 </details>
 
-                <details class="bg-white rounded-lg p-6 shadow">
-                    <summary class="font-semibold cursor-pointer">What should I do if my card is lost or stolen?</summary>
-                    <p class="mt-3 text-gray-600">Contact us immediately at 1-800-BANK-STYLE or through our mobile app to report and block your card. We'll issue a replacement card within 2-3 business days.</p>
+                <details class="group bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <summary class="font-bold text-lg cursor-pointer flex items-center justify-between">
+                        <span class="flex items-center gap-3">
+                            <span class="text-2xl">🚨</span>
+                            What if my card is lost or stolen?
+                        </span>
+                        <span class="text-yellow-500 group-open:rotate-180 transition-transform duration-300">▼</span>
+                    </summary>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded mb-4">
+                            <p class="text-red-700 font-semibold">🚨 Act immediately to protect your account!</p>
+                        </div>
+                        <ol class="text-gray-600 space-y-3">
+                            <li class="flex gap-3">
+                                <span class="bg-yellow-500 text-black w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                                <span>Call 1-800-COMM-BANK or use our mobile app to instantly freeze your card</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="bg-yellow-500 text-black w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                                <span>Review recent transactions for any unauthorized activity</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="bg-yellow-500 text-black w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">3</span>
+                                <span>Request a replacement card (arrives in 1-2 business days via express delivery)</span>
+                            </li>
+                        </ol>
+                    </div>
                 </details>
 
-                <details class="bg-white rounded-lg p-6 shadow">
-                    <summary class="font-semibold cursor-pointer">How do I reset my online banking password?</summary>
-                    <p class="mt-3 text-gray-600">Use the "Forgot Password" link on our login page, or contact customer service. For security, password resets require identity verification.</p>
+                <details class="group bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <summary class="font-bold text-lg cursor-pointer flex items-center justify-between">
+                        <span class="flex items-center gap-3">
+                            <span class="text-2xl">🔐</span>
+                            How do I reset my online banking password?
+                        </span>
+                        <span class="text-yellow-500 group-open:rotate-180 transition-transform duration-300">▼</span>
+                    </summary>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <p class="text-gray-600 leading-relaxed mb-4">For security, we use multi-factor authentication for password resets:</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">🌐 Online Reset</h4>
+                                <p class="text-blue-700 text-sm">Use "Forgot Password" on our login page. We'll send a secure link to your registered email.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-800 mb-2">📞 Phone Reset</h4>
+                                <p class="text-green-700 text-sm">Call customer service for immediate assistance with identity verification.</p>
+                            </div>
+                        </div>
+                    </div>
                 </details>
             </div>
         </div>
@@ -206,7 +405,7 @@
                     <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
                         BS
                     </div>
-                    <span class="font-semibold text-lg">BankStyle</span>
+                    <span class="font-semibold text-lg">CommBank</span>
                 </div>
                 <p class="text-gray-600 text-sm mt-3">A clean, modern banking UI demo. Replace placeholder content for production.</p>
             </div>
@@ -240,7 +439,7 @@
         </div>
 
         <div class="border-t py-4 text-center text-sm text-gray-500">
-            © <span id="year"></span> BankStyle — UI Prototype
+            © <span id="year"></span> CommBank — UI Prototype
         </div>
     </footer>
 

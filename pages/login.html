@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - BankStyle</title>
+    <title>Login - CommBank</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css">
 
     <style>
         .brand-yellow {
@@ -19,107 +20,115 @@
 <body class="bg-gray-50 text-gray-800">
 
     <!-- ========= NAVBAR ========= -->
-    <header class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
-                    BS
-                </div>
-                <span class="font-semibold text-lg">BankStyle</span>
-            </div>
-
-            <nav class="hidden md:flex gap-6 text-sm">
-                <a href="../index.html" class="hover:text-yellow-600">Home</a>
-                <a href="./about.html" class="hover:text-yellow-600">About</a>
-                <a href="#" class="hover:text-yellow-600">Services</a>
-                <a href="#" class="hover:text-yellow-600">Contact</a>
-            </nav>
-
-            <button id="menuBtn" class="md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
+  <header class="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Main header -->
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm">
+            <span class="font-bold text-sm text-black">BS</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-xl text-gray-900">CommBank</span>
+            <span class="text-xs text-gray-500 -mt-1">Trusted Banking</span>
+          </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-            <a href="../index.html" class="block px-4 py-3 hover:bg-gray-100">Home</a>
-            <a href="./about.html" class="block px-4 py-3 hover:bg-gray-100">About</a>
-            <a href="#" class="block px-4 py-3 hover:bg-gray-100">Services</a>
-            <a href="#" class="block px-4 py-3 hover:bg-gray-100">Contact</a>
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <div class="flex gap-6">
+             <a href="../index.html" class="link">Home</a>
+            <a href="./about.html" class="link">About</a>
+            <a href="./services.html" class="link">Services</a>
+            <a href="./contact.html" class="link">Contact</a>
+          </div>
+          
+          <!-- Login Buttons -->
+          <div class="flex items-center gap-3 ml-6 pl-6 border-l border-gray-200">
+            <a href="#" class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm">
+              Login
+            </a>
+          </div>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+        <div class="py-4 space-y-1">
+          <a href="./" class="link">Home</a>
+          <a href="./pages/about.html" class="link">About</a>
+          <a href="./pages/services.html" class="link">Services</a>
+          <a href="./pages/contact.html" class="link">Contact</a>
+          
+          <!-- Mobile CTA -->
+          <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
+            <a href="./login.html" class="block text-center text-gray-700 hover:text-gray-900 py-2 text-sm font-medium">Login</a>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
     <!-- ========= LOGIN SECTION ========= -->
     <section class="bg-gradient-to-r from-yellow-50 to-white min-h-screen flex items-center">
-        <div class="max-w-md mx-auto w-full px-4">
-            <div class="bg-white rounded-xl shadow-lg p-8">
+        <div class="max-w-md md:max-w-lg lg:max-w-xl mx-auto w-full px-4">
+            <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 lg:p-12">
                 <div class="text-center mb-8">
-                    <div class="w-16 h-16 brand-yellow rounded-full flex justify-center items-center font-bold text-black mx-auto mb-4">
-                        BS
+                    <div class="w-16 h-16 md:w-20 md:h-20 brand-yellow rounded-full flex justify-center items-center font-bold text-black mx-auto mb-4">
+                        <span class="text-lg md:text-xl">BS</span>
                     </div>
-                    <h1 class="text-2xl font-bold">Welcome Back</h1>
-                    <p class="text-gray-600 mt-2">Sign in to your BankStyle account</p>
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">Welcome Back</h1>
+                    <p class="text-gray-600 mt-2 text-base md:text-lg">Sign in to your CommBank account</p>
                 </div>
 
-                <form id="loginForm" class="space-y-6">
+                <form id="loginForm" class="space-y-6 md:space-y-8">
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <label for="email" class="block text-sm md:text-base font-medium text-gray-700 mb-2">Email Address</label>
                         <input type="email" id="email" name="email" required
-                            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                            class="w-full border border-gray-300 rounded-md px-4 py-3 md:px-5 md:py-4 text-base focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                             placeholder="Enter your email">
                     </div>
 
                     <div>
-                        <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <label for="password" class="block text-sm md:text-base font-medium text-gray-700 mb-2">Password</label>
                         <input type="password" id="password" name="password" required
-                            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                            class="w-full border border-gray-300 rounded-md px-4 py-3 md:px-5 md:py-4 text-base focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                             placeholder="Enter your password">
                     </div>
 
                     <div class="flex items-center justify-between">
                         <label class="flex items-center">
-                            <input type="checkbox" class="rounded border-gray-300 text-yellow-600 focus:ring-yellow-500">
-                            <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                            <input type="checkbox" class="rounded border-gray-300 active-link focus:ring-yellow-500">
+                            <span class="ml-2 text-sm md:text-base text-gray-600">Remember me</span>
                         </label>
-                        <a href="#" class="text-sm text-yellow-600 hover:text-yellow-700">Forgot password?</a>
+                        <a href="#" class="text-sm md:text-base active-link hover:text-yellow-700">Forgot password?</a>
                     </div>
 
                     <button type="submit" 
-                        class="w-full bg-black text-white py-3 rounded-md hover:opacity-90 transition duration-200">
+                        class="w-full bg-black text-white py-3 md:py-4 text-base md:text-lg rounded-md hover:opacity-90 transition duration-200">
                         Sign In
                     </button>
                 </form>
 
-                <div class="mt-6 text-center">
-                    <p class="text-sm text-gray-600">
+                <div class="mt-6 md:mt-8 text-center">
+                    <p class="text-sm md:text-base text-gray-600">
                         Don't have an account? 
-                        <a href="#" class="text-yellow-600 hover:text-yellow-700 font-medium">Create account</a>
+                        <a href="#" class="active-link hover:text-yellow-700 font-medium">Create account</a>
                     </p>
                 </div>
 
                 <div class="mt-6 pt-6 border-t border-gray-200">
-                    <p class="text-xs text-gray-500 text-center">
+                    <p class="text-xs md:text-sm text-gray-500 text-center">
                         By signing in, you agree to our Terms of Service and Privacy Policy
                     </p>
-                </div>
-            </div>
-
-            <!-- Security Notice -->
-            <div class="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <div class="flex items-start">
-                    <svg class="w-5 h-5 text-blue-600 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-                    </svg>
-                    <div>
-                        <h3 class="text-sm font-medium text-blue-800">Security Notice</h3>
-                        <p class="text-xs text-blue-700 mt-1">
-                            This is a demo login page. In production, implement proper authentication and security measures.
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -132,10 +141,10 @@
                 <div class="w-8 h-8 brand-yellow rounded-full flex justify-center items-center font-bold text-black text-sm">
                     BS
                 </div>
-                <span class="font-semibold">BankStyle</span>
+                <span class="font-semibold">CommBank</span>
             </div>
             <p class="text-sm text-gray-500">
-                © <span id="year"></span> BankStyle — UI Prototype
+                © <span id="year"></span> CommBank — UI Prototype
             </p>
         </div>
     </footer>
