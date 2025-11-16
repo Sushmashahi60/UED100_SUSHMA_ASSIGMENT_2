@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us - CommBank</title>
 
+    <!-- google fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/style.css">
+
 
     <style>
         .brand-yellow {
@@ -27,7 +32,7 @@
         <!-- Logo -->
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm">
-            <span class="font-bold text-sm text-black">BS</span>
+            <span class="font-bold text-sm text-black">CB</span>
           </div>
           <div class="flex flex-col">
             <span class="font-bold text-xl text-gray-900">CommBank</span>
@@ -63,15 +68,17 @@
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white">
         <div class="py-4 space-y-1">
-          <a href="./" class="link">Home</a>
+          <a href="../index.html" class="link">Home</a>
           <a href="./about.html" class="link">About</a>
           <a href="./services.html" class="link">Services</a>
           <a href="./contact.html" class="active-link">Contact</a>
           
-          <!-- Mobile CTA -->
-           <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
-            <a href="./login.html" class="block text-center text-gray-700 hover:text-gray-900 py-2 text-sm font-medium">Login</a>
-          </div>
+            <!-- Mobile CTA -->
+            <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
+            <a href="./login.html" class="block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-3 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm text-center">
+              Login
+            </a>
+            </div>
         </div>
       </div>
     </div>
@@ -96,7 +103,7 @@
                 We're committed to making your financial journey seamless and secure.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                <a href="#contact-form" class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-xl font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <a href="#contact-form" class="bg-gradient-to-r from-yellow-200 to-yellow-300 text-black px-8 py-4 rounded-xl font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                     Start Conversation
                 </a>
                 <a href="tel:1-800-BANK-STYLE" class="flex items-center gap-2 bg-white text-gray-700 px-8 py-4 rounded-xl font-semibold border-2 border-gray-200 hover:border-yellow-400 transition-all duration-300">
@@ -245,7 +252,7 @@
                     </div>
 
                     <!-- Info Side -->
-                    <div class="bg-gradient-to-br from-yellow-400 to-yellow-500 p-10 flex flex-col justify-center text-black">
+                    <div class="bg-gradient-to-br from-yellow-200 to-yellow-400 p-10 flex flex-col justify-center text-black">
                         <div class="mb-8">
                             <h3 class="text-2xl font-bold mb-4">Why Choose CommBank?</h3>
                             <div class="space-y-4">
@@ -403,7 +410,7 @@
             <div>
                 <div class="flex gap-3 items-center">
                     <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
-                        BS
+                        CB
                     </div>
                     <span class="font-semibold text-lg">CommBank</span>
                 </div>
@@ -443,17 +450,10 @@
         </div>
     </footer>
 
-    <!-- ========= SCRIPT ========= -->
-    <script>
-        // Mobile menu toggle
-        document.getElementById("menuBtn").addEventListener("click", () => {
-            document.getElementById("mobileMenu").classList.toggle("hidden");
-        });
 
-        // Dynamic copyright year
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+<script src="../js/main.js">
+</script>
 
 </body>
 
-</html></div></svg></div></svg></div></p>
+</html>

@@ -1,6 +1,6 @@
 /* Custom styles */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Focus states for accessibility */
@@ -33,7 +33,7 @@ textarea:focus {
   color: #111827;
   font-weight: 500;
   background-color: #fffbeb;
-  border-left: 4px solid #fbbf24;
+  border-bottom: 4px solid #fbbf24;
 
 }
 
@@ -43,12 +43,12 @@ textarea:focus {
   color: #4b5563;
   transition: color 0.4s ease, background-color 0.2s ease;
   border-bottom: 4px solid transparent;
-  border-left: 4px solid transparent;
+  border-bottom: 4px solid transparent;
   font-weight: 500;
   }
 
 .link:hover {
   color: #111827;
   background-color: #fffbeb;
-  border-left: 4px solid #fbbf24;
+  border-bottom: 4px solid #fbbf24;
 }

@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - CommBank</title>
+    
+        <!-- google fonts  -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/style.css" />
@@ -13,6 +19,7 @@
             background: linear-gradient(90deg, #ffd24a, #ffca28);
         }
     </style>
+
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -24,7 +31,7 @@
         <!-- Logo -->
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm">
-            <span class="font-bold text-sm text-black">BS</span>
+            <span class="font-bold text-sm text-black">CB</span>
           </div>
           <div class="flex flex-col">
             <span class="font-bold text-xl text-gray-900">CommBank</span>
@@ -66,9 +73,13 @@
           <a href="./contact.html" class="link">Contact</a>
           
           <!-- Mobile CTA -->
-           <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
-            <a href="./login.html" class="block text-center text-gray-700 hover:text-gray-900 py-2 text-sm font-medium">Login</a>
-          </div>
+            <!-- Mobile CTA -->
+            <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
+            <a href="./login.html" class="block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-3 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm text-center">
+              Login
+            </a>
+            </div>
+        </div>
       </div>
     </div>
   </header>
@@ -253,7 +264,7 @@
         </section>
 
         <!-- CTA Strip -->
-        <section class="bg-gradient-to-r from-yellow-400 to-yellow-500 py-12">
+        <section class="bg-gradient-to-r from-yellow-50 to-yellow-100 py-12">
             <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
                 <div class="text-center md:text-left mb-6 md:mb-0">
                     <h3 class="text-2xl font-bold text-black mb-2">Ready to experience smarter banking?</h3>
@@ -281,7 +292,7 @@
             <div>
                 <div class="flex gap-3 items-center mb-3">
                     <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
-                        BS
+                        CB
                     </div>
                     <span class="font-semibold text-lg">CommBank</span>
                 </div>
@@ -321,15 +332,8 @@
         </div>
     </footer>
 
-    <!-- ========= SCRIPT ========= -->
-    <script>
-        // Mobile menu toggle
-        document.getElementById("menuBtn").addEventListener("click", () => {
-            document.getElementById("mobileMenu").classList.toggle("hidden");
-        });
+  <script src="../js/main.js">
+</script>
 
-        // Dynamic copyright year
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
 </body>
-</html></ul>
+</html>

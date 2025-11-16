@@ -5,10 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - CommBank</title>
+    <!-- google fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/style.css">
+
 
     <style>
         .brand-yellow {
@@ -27,7 +32,7 @@
         <!-- Logo -->
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm">
-            <span class="font-bold text-sm text-black">BS</span>
+            <span class="font-bold text-sm text-black">CB</span>
           </div>
           <div class="flex flex-col">
             <span class="font-bold text-xl text-gray-900">CommBank</span>
@@ -63,15 +68,17 @@
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white">
         <div class="py-4 space-y-1">
-          <a href="./" class="link">Home</a>
-          <a href="./pages/about.html" class="link">About</a>
-          <a href="./pages/services.html" class="link">Services</a>
-          <a href="./pages/contact.html" class="link">Contact</a>
+          <a href="../index.html" class="link">Home</a>
+          <a href="./about.html" class="link">About</a>
+          <a href="./services.html" class="link">Services</a>
+          <a href="./contact.html" class="link">Contact</a>
           
           <!-- Mobile CTA -->
-          <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
-            <a href="./login.html" class="block text-center text-gray-700 hover:text-gray-900 py-2 text-sm font-medium">Login</a>
-          </div>
+            <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
+            <a href="./login.html" class="block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-3 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm text-center">
+              Login
+            </a>
+            </div>
         </div>
       </div>
     </div>
@@ -83,7 +90,7 @@
             <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 lg:p-12">
                 <div class="text-center mb-8">
                     <div class="w-16 h-16 md:w-20 md:h-20 brand-yellow rounded-full flex justify-center items-center font-bold text-black mx-auto mb-4">
-                        <span class="text-lg md:text-xl">BS</span>
+                        <span class="text-lg md:text-xl">CB</span>
                     </div>
                     <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">Welcome Back</h1>
                     <p class="text-gray-600 mt-2 text-base md:text-lg">Sign in to your CommBank account</p>
@@ -139,7 +146,7 @@
         <div class="max-w-7xl mx-auto px-4 py-8 text-center">
             <div class="flex justify-center items-center gap-3 mb-4">
                 <div class="w-8 h-8 brand-yellow rounded-full flex justify-center items-center font-bold text-black text-sm">
-                    BS
+                    CB
                 </div>
                 <span class="font-semibold">CommBank</span>
             </div>
@@ -149,22 +156,9 @@
         </div>
     </footer>
 
-    <!-- ========= SCRIPT ========= -->
-    <script>
-        // Mobile menu toggle
-        document.getElementById("menuBtn").addEventListener("click", () => {
-            document.getElementById("mobileMenu").classList.toggle("hidden");
-        });
 
-        // Dynamic copyright year
-        document.getElementById("year").textContent = new Date().getFullYear();
-
-        // Form submission handler (demo)
-        document.getElementById("loginForm").addEventListener("submit", (e) => {
-            e.preventDefault();
-            alert("This is a demo login form. In production, implement proper authentication.");
-        });
-    </script>
+  <script src="../js/login.js"></script>
+  <script src="../js/main.js"></script>
 
 </body>
 
