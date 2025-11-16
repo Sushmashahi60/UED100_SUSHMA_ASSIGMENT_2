@@ -8,6 +8,7 @@ This project is developed as part of **UED100 – User Experience Design (Assess
 * **Tailwind CSS** – responsive styling and modern layout design
 * **JavaScript (Vanilla JS)** – interactivity and dynamic behaviour
 * **Multimedia Assets** – images, icons and UI elements
+* **Google Fonts** - For font styles
 
 ## 📄 Pages Included
 
