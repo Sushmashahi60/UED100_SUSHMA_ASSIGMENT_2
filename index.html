@@ -15,467 +15,482 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/style.css">
 
-
   <style>
     .brand-yellow {
       background: linear-gradient(90deg, #ffd24a, #ffca28);
+    }
+    /* Skip to main content link for screen readers */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 9999;
+    }
+    .skip-link:focus {
+      top: 6px;
     }
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
+  <!-- Skip to main content for keyboard navigation -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ========= NAVBAR ========= -->
-  <header class="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm">
-    <div class="max-w-7xl mx-auto px-4">
+  <header class="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm" role="banner">
+    <nav class="max-w-7xl mx-auto px-4" role="navigation" aria-label="Main navigation">
       <!-- Main header -->
       <div class="flex justify-between items-center py-4">
         <!-- Logo -->
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm">
+          <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm" aria-hidden="true">
             <span class="font-bold text-sm text-black">CB</span>
           </div>
           <div class="flex flex-col">
             <span class="font-bold text-xl text-gray-900">CommBank</span>
-            <span class="text-xs text-gray-500 -mt-1">Trusted Banking</span>
+            <span class="text-xs text-gray-500 -mt-1" aria-label="Tagline">Trusted Banking</span>
           </div>
         </div>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center gap-8">
-          <div class="flex gap-6">
-            <a href="./" class="active-link">Home</a>
-            <a href="./pages/about.html" class="link">About</a>
-            <a href="./pages/services.html" class="link">Services</a>
-            <a href="./pages/contact.html" class="link">Contact</a>
-          </div>
+        <nav class="hidden lg:flex items-center gap-8" aria-label="Primary navigation">
+          <ul class="flex gap-6" role="menubar">
+            <li role="none"><a href="./" class="active-link" role="menuitem" aria-current="page">Home</a></li>
+            <li role="none"><a href="./pages/about.html" class="link" role="menuitem">About</a></li>
+            <li role="none"><a href="./pages/services.html" class="link" role="menuitem">Services</a></li>
+            <li role="none"><a href="./pages/contact.html" class="link" role="menuitem">Contact</a></li>
+          </ul>
           
           <!-- Login Buttons -->
-            <div class="flex items-center gap-3 ml-6 pl-6 border-l border-gray-200"></div>
-            <a href="./pages/login.html" class="group relative bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black px-6 py-2.5 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 overflow-hidden">
+          <div class="flex items-center gap-3 ml-6 pl-6 border-l border-gray-200">
+            <a href="./pages/login.html" class="group relative bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black px-6 py-2.5 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 overflow-hidden" aria-label="Login to your account">
               <span class="relative z-10 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-4 w-4 group-hover:rotate-12 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-4 w-4 group-hover:rotate-12 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 0a4 4 0 01-4 4H6a5 5 0 01-5-5v-2a5 5 0 015-5h1a4 4 0 014 4z" />
               </svg>
-              <span class="text-white">
-                Login
+              <span class="text-white">Login</span>
               </span>
-              </span>
-              <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" aria-hidden="true"></div>
             </a>
-            </div>
+          </div>
         </nav>
 
         <!-- Mobile menu button -->
-        <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle mobile menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
 
       <!-- Mobile Menu -->
-      <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white" role="menu" aria-label="Mobile navigation">
         <div class="py-4 space-y-1">
-          <a href="./" class="active-link">Home</a>
-          <a href="./pages/about.html" class="link">About</a>
-          <a href="./pages/services.html" class="link">Services</a>
-          <a href="./pages/contact.html" class="link">Contact</a>
+          <a href="./" class="active-link" role="menuitem" aria-current="page">Home</a>
+          <a href="./pages/about.html" class="link" role="menuitem">About</a>
+          <a href="./pages/services.html" class="link" role="menuitem">Services</a>
+          <a href="./pages/contact.html" class="link" role="menuitem">Contact</a>
           
            <!-- Mobile CTA -->
             <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
-            <a href="./login.html" class="block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-3 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm text-center">
+            <a href="./login.html" class="block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-3 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm text-center" role="menuitem" aria-label="Login to your account">
               Login
             </a>
             </div>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
 
   <!-- ========= HERO SECTION ========= -->
-  <section class="relative bg-gradient-to-br from-yellow-50 via-white to-blue-50 overflow-hidden">
-    <!-- Background decorative elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute -top-40 -right-40 w-80 h-80 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-    </div>
+  <main id="main-content" role="main">
+    <section class="relative bg-gradient-to-br from-yellow-50 via-white to-blue-50 overflow-hidden" aria-labelledby="hero-heading">
+      <!-- Background decorative elements -->
+      <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+      </div>
 
-    <div class="relative max-w-7xl mx-auto px-4 py-20">
-      <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Left Content -->
-        <div class="text-center lg:text-left">
-          <div class="inline-flex items-center bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <span class="w-2 h-2 bg-yellow-400 rounded-full mr-2 animate-pulse"></span>
-            Trusted by 500K+ customers
+      <div class="relative max-w-7xl mx-auto px-4 py-20">
+        <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div class="text-center lg:text-left">
+            <div class="inline-flex items-center bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-medium mb-6" role="status" aria-label="Customer trust indicator">
+              <span class="w-2 h-2 bg-yellow-400 rounded-full mr-2 animate-pulse" aria-hidden="true"></span>
+              Trusted by 500K+ customers
+            </div>
+            
+            <h1 id="hero-heading" class="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+              Banking Made
+              <span class="text-yellow-500">Simple</span>
+            </h1>
+            
+            <p class="mt-6 text-xl text-gray-600 leading-relaxed">
+              Experience the future of banking with our award-winning mobile app. Manage money, track spending, and achieve your financial goals effortlessly.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a href="#" class="group bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-lg text-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1" aria-label="Open a new bank account">
+                Open Account
+                <svg class="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+              <a href="#" class="group bg-white text-gray-800 px-8 py-4 rounded-lg text-lg font-semibold border-2 border-gray-200 hover:border-yellow-400 transition-all duration-300 shadow-sm hover:shadow-lg" aria-label="Explore our banking products">
+                <svg class="inline-block mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12l2 5H7l2-5z"></path>
+                </svg>
+                Explore Products
+              </a>
+            </div>
+
+            <!-- Trust indicators -->
+            <div class="mt-10 flex flex-wrap justify-center lg:justify-start items-center gap-6 text-sm text-gray-500" role="list" aria-label="Trust indicators">
+              <div class="flex items-center gap-2" role="listitem">
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                </svg>
+                <span>Bank-level security</span>
+              </div>
+              <div class="flex items-center gap-2" role="listitem">
+                <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.95-.69l1.07-3.292z"></path>
+                </svg>
+                <span>4.8 star rated app</span>
+              </div>
+              <div class="flex items-center gap-2" role="listitem">
+                <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>24/7 support</span>
+              </div>
+            </div>
           </div>
-          
-          <h1 class="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-            Banking Made
-            <span class="text-yellow-500">Simple</span>
-          </h1>
-          
-          <p class="mt-6 text-xl text-gray-600 leading-relaxed">
-            Experience the future of banking with our award-winning mobile app. Manage money, track spending, and achieve your financial goals effortlessly.
+
+          <!-- Right Content - Interactive Demo -->
+          <div class="mt-12 lg:mt-0 relative" role="img" aria-label="Mobile banking app demonstration">
+            <!-- Floating cards animation -->
+            <div class="relative">
+              <!-- Main phone mockup -->
+              <div class="relative mx-auto w-72 h-96 bg-gray-900 rounded-3xl p-2 shadow-2xl">
+                <div class="w-full h-full bg-white rounded-2xl overflow-hidden relative">
+                  <!-- Phone screen content -->
+                  <div class="h-full bg-gradient-to-br from-yellow-50 to-white p-6">
+                    <div class="text-center mb-6">
+                      <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl mx-auto mb-3 flex items-center justify-center" aria-hidden="true">
+                        <span class="font-bold text-black">CB</span>
+                      </div>
+                      <h3 class="font-bold text-lg">Welcome back!</h3>
+                      <p class="text-sm text-gray-600">Your balance today</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-4 shadow-sm mb-4">
+                      <div class="text-3xl font-bold text-gray-900" aria-label="Account balance">$12,435.67</div>
+                      <div class="text-sm text-green-600 flex items-center mt-1" aria-label="Monthly growth">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                        +2.5% this month
+                      </div>
+                    </div>
+
+                    <div class="space-y-3" role="list" aria-label="Banking features">
+                      <div class="flex items-center justify-between bg-white rounded-xl p-3 shadow-sm" role="listitem">
+                        <div class="flex items-center gap-3">
+                          <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center" aria-hidden="true">
+                            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                            </svg>
+                          </div>
+                          <div>
+                            <div class="font-semibold text-sm">Quick Transfer</div>
+                            <div class="text-xs text-gray-500">Send money instantly</div>
+                          </div>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </div>
+
+                      <div class="flex items-center justify-between bg-white rounded-xl p-3 shadow-sm" role="listitem">
+                        <div class="flex items-center gap-3">
+                          <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center" aria-hidden="true">
+                            <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                          </div>
+                          <div>
+                            <div class="font-semibold text-sm">Analytics</div>
+                            <div class="text-xs text-gray-500">Track your spending</div>
+                          </div>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating notification cards -->
+              <div class="absolute -top-4 -left-8 bg-white rounded-xl shadow-lg p-4 border border-gray-100 animate-bounce" style="animation-duration: 3s;" role="status" aria-label="Payment notification">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center" aria-hidden="true">
+                    <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-semibold text-sm">Payment Sent</div>
+                    <div class="text-xs text-gray-500">$250 to John</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="absolute -bottom-6 -right-8 bg-white rounded-xl shadow-lg p-4 border border-gray-100 animate-pulse" role="status" aria-label="Income notification">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center" aria-hidden="true">
+                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-semibold text-sm">Salary Received</div>
+                    <div class="text-xs text-gray-500">+$3,200</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video play button overlay -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <button class="w-16 h-16 bg-white bg-opacity-90 backdrop-blur-sm rounded-full shadow-lg hover:scale-110 transition-transform duration-200 flex items-center justify-center group" aria-label="Play demo video">
+                <svg class="w-6 h-6 text-gray-700 ml-1 group-hover:text-yellow-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= FEATURES ========= -->
+    <section class="max-w-7xl mx-auto px-4 py-16" aria-labelledby="features-heading">
+      <h2 id="features-heading" class="text-3xl font-bold mb-10">What We Offer</h2>
+
+      <div class="grid md:grid-cols-3 gap-8" role="list">
+        <article class="bg-white shadow rounded-xl p-6" role="listitem">
+          <h3 class="font-semibold text-lg">Everyday Accounts</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            Simple, fast and secure everyday banking tailored for your lifestyle.
           </p>
+          <a href="#" class="active-link mt-4 inline-block" aria-label="Learn more about everyday accounts">Learn more →</a>
+        </article>
 
-          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="#" class="group bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-lg text-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              Open Account
-              <svg class="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-              </svg>
-            </a>
-            <a href="#" class="group bg-white text-gray-800 px-8 py-4 rounded-lg text-lg font-semibold border-2 border-gray-200 hover:border-yellow-400 transition-all duration-300 shadow-sm hover:shadow-lg">
-              <svg class="inline-block mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12l2 5H7l2-5z"></path>
-              </svg>
-              Explore Products
-            </a>
-          </div>
+        <article class="bg-white shadow rounded-xl p-6" role="listitem">
+          <h3 class="font-semibold text-lg">Home & Personal Loans</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            Competitive rates, flexible repayments and easy application.
+          </p>
+          <a href="#" class="active-link mt-4 inline-block" aria-label="See loan offers">See offers →</a>
+        </article>
 
-          <!-- Trust indicators -->
-          <div class="mt-10 flex flex-wrap justify-center lg:justify-start items-center gap-6 text-sm text-gray-500">
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
-              </svg>
-              Bank-level security
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.95-.69l1.07-3.292z"></path>
-              </svg>
-              4.8★ rated app
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              24/7 support
-            </div>
-          </div>
-        </div>
+        <article class="bg-white shadow rounded-xl p-6" role="listitem">
+          <h3 class="font-semibold text-lg">Mobile Banking App</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            Track expenses, automate savings and send money instantly.
+          </p>
+          <a href="#" class="active-link mt-4 inline-block" aria-label="Explore mobile banking app features">Explore app →</a>
+        </article>
+      </div>
+    </section>
 
-        <!-- Right Content - Interactive Demo -->
-        <div class="mt-12 lg:mt-0 relative">
-          <!-- Floating cards animation -->
-          <div class="relative">
-            <!-- Main phone mockup -->
-            <div class="relative mx-auto w-72 h-96 bg-gray-900 rounded-3xl p-2 shadow-2xl">
-              <div class="w-full h-full bg-white rounded-2xl overflow-hidden relative">
-                <!-- Phone screen content -->
-                <div class="h-full bg-gradient-to-br from-yellow-50 to-white p-6">
-                  <div class="text-center mb-6">
-                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl mx-auto mb-3 flex items-center justify-center">
-                      <span class="font-bold text-black">CB</span>
-                    </div>
-                    <h3 class="font-bold text-lg">Welcome back!</h3>
-                    <p class="text-sm text-gray-600">Your balance today</p>
-                  </div>
-                  
-                  <div class="bg-white rounded-2xl p-4 shadow-sm mb-4">
-                    <div class="text-3xl font-bold text-gray-900">$12,435.67</div>
-                    <div class="text-sm text-green-600 flex items-center mt-1">
-                      <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                      </svg>
-                      +2.5% this month
-                    </div>
-                  </div>
-
-                  <div class="space-y-3">
-                    <div class="flex items-center justify-between bg-white rounded-xl p-3 shadow-sm">
-                      <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                          <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                          </svg>
-                        </div>
-                        <div>
-                          <div class="font-semibold text-sm">Quick Transfer</div>
-                          <div class="text-xs text-gray-500">Send money instantly</div>
-                        </div>
-                      </div>
-                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </div>
-
-                    <div class="flex items-center justify-between bg-white rounded-xl p-3 shadow-sm">
-                      <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                          <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                          </svg>
-                        </div>
-                        <div>
-                          <div class="font-semibold text-sm">Analytics</div>
-                          <div class="text-xs text-gray-500">Track your spending</div>
-                        </div>
-                      </div>
-                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
+    <!-- ========= TESTIMONIALS ========= -->
+    <section class="bg-gray-50 py-16" aria-labelledby="testimonials-heading">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 id="testimonials-heading" class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8" role="list">
+          <article class="bg-white rounded-xl p-6 shadow-sm" role="listitem">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold" aria-label="Jane Smith profile picture">
+                JS
+              </div>
+              <div>
+                <h4 class="font-semibold">Jane Smith</h4>
+                <p class="text-sm text-gray-500">Business Owner</p>
               </div>
             </div>
+            <blockquote class="text-gray-600">"CommBank has transformed how I manage my business finances. The mobile app is incredibly intuitive and saves me hours every week."</blockquote>
+            <div class="flex mt-4" role="img" aria-label="5 out of 5 stars rating">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </article>
 
-            <!-- Floating notification cards -->
-            <div class="absolute -top-4 -left-8 bg-white rounded-xl shadow-lg p-4 border border-gray-100 animate-bounce" style="animation-duration: 3s;">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                </div>
-                <div>
-                  <div class="font-semibold text-sm">Payment Sent</div>
-                  <div class="text-xs text-gray-500">$250 to John</div>
-                </div>
+          <article class="bg-white rounded-xl p-6 shadow-sm" role="listitem">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-semibold" aria-label="Mike Johnson profile picture">
+                MJ
+              </div>
+              <div>
+                <h4 class="font-semibold">Mike Johnson</h4>
+                <p class="text-sm text-gray-500">Software Engineer</p>
               </div>
             </div>
+            <blockquote class="text-gray-600">"The loan application process was seamless. Got approved in 24 hours with competitive rates. Highly recommend!"</blockquote>
+            <div class="flex mt-4" role="img" aria-label="5 out of 5 stars rating">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </article>
 
-            <div class="absolute -bottom-6 -right-8 bg-white rounded-xl shadow-lg p-4 border border-gray-100 animate-pulse">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                  </svg>
-                </div>
-                <div>
-                  <div class="font-semibold text-sm">Salary Received</div>
-                  <div class="text-xs text-gray-500">+$3,200</div>
-                </div>
+          <article class="bg-white rounded-xl p-6 shadow-sm" role="listitem">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold" aria-label="Anna Brown profile picture">
+                AB
+              </div>
+              <div>
+                <h4 class="font-semibold">Anna Brown</h4>
+                <p class="text-sm text-gray-500">Marketing Manager</p>
               </div>
             </div>
-          </div>
-
-          <!-- Video play button overlay -->
-          <div class="absolute inset-0 flex items-center justify-center">
-            <button class="w-16 h-16 bg-white bg-opacity-90 backdrop-blur-sm rounded-full shadow-lg hover:scale-110 transition-transform duration-200 flex items-center justify-center group">
-              <svg class="w-6 h-6 text-gray-700 ml-1 group-hover:text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </button>
-          </div>
+            <blockquote class="text-gray-600">"Excellent customer service and modern banking features. The spending tracking has helped me save more than ever."</blockquote>
+            <div class="flex mt-4" role="img" aria-label="5 out of 5 stars rating">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section></svg>
+    </section>
 
-  <!-- ========= FEATURES ========= -->
-  <section class="max-w-7xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold mb-10">What We Offer</h2>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white shadow rounded-xl p-6">
-        <h3 class="font-semibold text-lg">Everyday Accounts</h3>
-        <p class="text-gray-600 text-sm mt-2">
-          Simple, fast and secure everyday banking tailored for your lifestyle.
-        </p>
-        <a href="#" class="active-link mt-4 inline-block">Learn more →</a>
-      </div>
-
-      <div class="bg-white shadow rounded-xl p-6">
-        <h3 class="font-semibold text-lg">Home & Personal Loans</h3>
-        <p class="text-gray-600 text-sm mt-2">
-          Competitive rates, flexible repayments and easy application.
-        </p>
-        <a href="#" class="active-link mt-4 inline-block">See offers →</a>
-      </div>
-
-      <div class="bg-white shadow rounded-xl p-6">
-        <h3 class="font-semibold text-lg">Mobile Banking App</h3>
-        <p class="text-gray-600 text-sm mt-2">
-          Track expenses, automate savings and send money instantly.
-        </p>
-        <a href="#" class="active-link mt-4 inline-block">Explore app →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========= TESTIMONIALS ========= -->
-  <section class="bg-gray-50 py-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl p-6 shadow-sm">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold">
-              JS
-            </div>
-            <div>
-              <h4 class="font-semibold">Jane Smith</h4>
-              <p class="text-sm text-gray-500">Business Owner</p>
-            </div>
-          </div>
-          <p class="text-gray-600">"CommBank has transformed how I manage my business finances. The mobile app is incredibly intuitive and saves me hours every week."</p>
-          <div class="flex mt-4">
-            <span class="text-yellow-400">★★★★★</span>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 shadow-sm">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-semibold">
-              MJ
-            </div>
-            <div>
-              <h4 class="font-semibold">Mike Johnson</h4>
-              <p class="text-sm text-gray-500">Software Engineer</p>
-            </div>
-          </div>
-          <p class="text-gray-600">"The loan application process was seamless. Got approved in 24 hours with competitive rates. Highly recommend!"</p>
-          <div class="flex mt-4">
-            <span class="text-yellow-400">★★★★★</span>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 shadow-sm">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
-              AB
-            </div>
-            <div>
-              <h4 class="font-semibold">Anna Brown</h4>
-              <p class="text-sm text-gray-500">Marketing Manager</p>
-            </div>
-          </div>
-          <p class="text-gray-600">"Excellent customer service and modern banking features. The spending tracking has helped me save more than ever."</p>
-          <div class="flex mt-4">
-            <span class="text-yellow-400">★★★★★</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========= VIDEO SHOWCASE ========= -->
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">See CommBank in Action</h2>
-        <p class="text-gray-600 text-lg">Discover how our mobile banking app makes managing money effortless</p>
-      </div>
-      
-      <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
-        <div class="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative">
-          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <button class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all duration-200 backdrop-blur-sm">
-              <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </button>
-          </div>
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80" 
-               alt="Banking App Demo" 
-               class="w-full h-full object-cover opacity-70">
-        </div>
-        <div class="p-6 bg-white">
-          <h3 class="font-semibold text-lg mb-2">Mobile Banking Made Simple</h3>
-          <p class="text-gray-600 text-sm">Watch how easy it is to transfer money, track expenses, and manage your accounts with our award-winning mobile app.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========= STATS & ACHIEVEMENTS ========= -->
-  <section class="bg-gradient-to-r from-yellow-50 to-orange-50 py-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Trusted by Millions</h2>
-        <p class="text-gray-600">Join thousands of satisfied customers who chose CommBank</p>
-      </div>
-      
-      <div class="grid md:grid-cols-4 gap-8 text-center">
-        <div class="bg-white rounded-xl p-6 shadow-sm">
-          <div class="text-3xl font-bold text-gray-900 mb-2">500K+</div>
-          <div class="text-gray-600">Active Customers</div>
+    <!-- ========= VIDEO SHOWCASE ========= -->
+    <section class="py-16" aria-labelledby="video-heading">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 id="video-heading" class="text-3xl font-bold mb-4">See CommBank in Action</h2>
+          <p class="text-gray-600 text-lg">Discover how our mobile banking app makes managing money effortless</p>
         </div>
         
-        <div class="bg-white rounded-xl p-6 shadow-sm">
-          <div class="text-3xl font-bold text-gray-900 mb-2">$2.5B</div>
-          <div class="text-gray-600">Assets Under Management</div>
-        </div>
-        
-        <div class="bg-white rounded-xl p-6 shadow-sm">
-          <div class="text-3xl font-bold text-gray-900 mb-2">99.9%</div>
-          <div class="text-gray-600">Uptime Guarantee</div>
-        </div>
-        
-        <div class="bg-white rounded-xl p-6 shadow-sm">
-          <div class="text-3xl font-bold text-gray-900 mb-2">4.8★</div>
-          <div class="text-gray-600">App Store Rating</div>
+        <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
+          <div class="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+              <button class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all duration-200 backdrop-blur-sm" aria-label="Play banking app demonstration video">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80" 
+                 alt="Banking app interface showing modern mobile banking features" 
+                 class="w-full h-full object-cover opacity-70">
+          </div>
+          <div class="p-6 bg-white">
+            <h3 class="font-semibold text-lg mb-2">Mobile Banking Made Simple</h3>
+            <p class="text-gray-600 text-sm">Watch how easy it is to transfer money, track expenses, and manage your accounts with our award-winning mobile app.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========= GALLERY ========= -->
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Modern Banking Experience</h2>
-        <p class="text-gray-600">From branches to mobile - we're everywhere you need us</p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="relative overflow-hidden rounded-xl shadow-lg group">
-          <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" 
-               alt="Modern Bank Branch" 
-               class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-          <div class="absolute bottom-4 left-4 text-white">
-            <h3 class="font-semibold">Modern Branches</h3>
-            <p class="text-sm opacity-90">Visit our state-of-the-art locations</p>
-          </div>
+    <!-- ========= STATS & ACHIEVEMENTS ========= -->
+    <section class="bg-gradient-to-r from-yellow-50 to-orange-50 py-16" aria-labelledby="stats-heading">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 id="stats-heading" class="text-3xl font-bold mb-4">Trusted by Millions</h2>
+          <p class="text-gray-600">Join thousands of satisfied customers who chose CommBank</p>
         </div>
         
-        <div class="relative overflow-hidden rounded-xl shadow-lg group">
-          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80" 
-               alt="Mobile Banking" 
-               class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-          <div class="absolute bottom-4 left-4 text-white">
-            <h3 class="font-semibold">Mobile First</h3>
-            <p class="text-sm opacity-90">Banking at your fingertips</p>
+        <div class="grid md:grid-cols-4 gap-8 text-center" role="list" aria-label="Company statistics">
+          <div class="bg-white rounded-xl p-6 shadow-sm" role="listitem">
+            <div class="text-3xl font-bold text-gray-900 mb-2" aria-label="500,000 plus active customers">500K+</div>
+            <div class="text-gray-600">Active Customers</div>
           </div>
-        </div>
-        
-        <div class="relative overflow-hidden rounded-xl shadow-lg group">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" 
-               alt="Customer Service" 
-               class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-          <div class="absolute bottom-4 left-4 text-white">
-            <h3 class="font-semibold">24/7 Support</h3>
-            <p class="text-sm opacity-90">We're here when you need us</p>
+          
+          <div class="bg-white rounded-xl p-6 shadow-sm" role="listitem">
+            <div class="text-3xl font-bold text-gray-900 mb-2" aria-label="2.5 billion dollars in assets under management">$2.5B</div>
+            <div class="text-gray-600">Assets Under Management</div>
+          </div>
+          
+          <div class="bg-white rounded-xl p-6 shadow-sm" role="listitem">
+            <div class="text-3xl font-bold text-gray-900 mb-2" aria-label="99.9 percent uptime guarantee">99.9%</div>
+            <div class="text-gray-600">Uptime Guarantee</div>
+          </div>
+          
+          <div class="bg-white rounded-xl p-6 shadow-sm" role="listitem">
+            <div class="text-3xl font-bold text-gray-900 mb-2" aria-label="4.8 out of 5 stars app store rating">4.8★</div>
+            <div class="text-gray-600">App Store Rating</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========= CTA STRIP ========= -->
-  <section class="bg-yellow-100 py-10">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-      <h3 class="text-xl font-semibold">Switch to a smarter banking experience today</h3>
-      <a href="#" class="mt-4 md:mt-0 bg-black text-white px-6 py-3 rounded-md hover:opacity-90">
-        Get Started
-      </a>
-    </div>
-  </section>
+    <!-- ========= GALLERY ========= -->
+    <section class="py-16" aria-labelledby="gallery-heading">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 id="gallery-heading" class="text-3xl font-bold mb-4">Modern Banking Experience</h2>
+          <p class="text-gray-600">From branches to mobile - we're everywhere you need us</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6" role="list">
+          <article class="relative overflow-hidden rounded-xl shadow-lg group" role="listitem">
+            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" 
+                 alt="Modern bank branch interior with contemporary design and customer service areas" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" aria-hidden="true"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="font-semibold">Modern Branches</h3>
+              <p class="text-sm opacity-90">Visit our state-of-the-art locations</p>
+            </div>
+          </article>
+          
+          <article class="relative overflow-hidden rounded-xl shadow-lg group" role="listitem">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80" 
+                 alt="Person using mobile banking app on smartphone with financial interface" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" aria-hidden="true"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="font-semibold">Mobile First</h3>
+              <p class="text-sm opacity-90">Banking at your fingertips</p>
+            </div>
+          </article>
+          
+          <article class="relative overflow-hidden rounded-xl shadow-lg group" role="listitem">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" 
+                 alt="Customer service representative helping clients with professional banking assistance" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" aria-hidden="true"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="font-semibold">24/7 Support</h3>
+              <p class="text-sm opacity-90">We're here when you need us</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= CTA STRIP ========= -->
+    <section class="bg-yellow-100 py-10" aria-labelledby="cta-heading">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+        <h3 id="cta-heading" class="text-xl font-semibold">Switch to a smarter banking experience today</h3>
+        <a href="#" class="mt-4 md:mt-0 bg-black text-white px-6 py-3 rounded-md hover:opacity-90" aria-label="Get started with CommBank today">
+          Get Started
+        </a>
+      </div>
+    </section>
+  </main>
 
    <!-- ========= FOOTER ========= -->
-    <footer class="bg-white border-t mt-12">
+    <footer class="bg-white border-t mt-12" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
             <div>
                 <div class="flex gap-3 items-center">
-                    <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black">
+                    <div class="w-10 h-10 brand-yellow rounded-full flex justify-center items-center font-bold text-black" aria-hidden="true">
                         CB
                     </div>
                     <span class="font-semibold text-lg">CommBank</span>
@@ -483,32 +498,32 @@
                 <p class="text-gray-600 text-sm mt-3">Modern banking solutions for your financial needs.</p>
             </div>
 
-            <div>
-                <h4 class="font-semibold mb-2">Products</h4>
+            <nav aria-labelledby="products-nav">
+                <h4 id="products-nav" class="font-semibold mb-2">Products</h4>
                 <ul class="text-sm text-gray-600 space-y-1">
-                    <li><a href="#" class="">Accounts</a></li>
-                    <li><a href="#" class="">Loans</a></li>
-                    <li><a href="#" class="">Investments</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Accounts</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Loans</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Investments</a></li>
                 </ul>
-            </div>
+            </nav>
 
-            <div>
-                <h4 class="font-semibold mb-2">Support</h4>
+            <nav aria-labelledby="support-nav">
+                <h4 id="support-nav" class="font-semibold mb-2">Support</h4>
                 <ul class="text-sm text-gray-600 space-y-1">
-                    <li><a href="#" class="">Help Center</a></li>
-                    <li><a href="#" class="">Security</a></li>
-                    <li><a href="#" class="">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Help Center</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Security</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Contact Us</a></li>
                 </ul>
-            </div>
+            </nav>
 
-            <div>
-                <h4 class="font-semibold mb-2">Legal</h4>
+            <nav aria-labelledby="legal-nav">
+                <h4 id="legal-nav" class="font-semibold mb-2">Legal</h4>
                 <ul class="text-sm text-gray-600 space-y-1">
-                    <li><a href="#" class="">Privacy Policy</a></li>
-                    <li><a href="#" class="">Terms & Conditions</a></li>
-                    <li><a href="#" class="">Accessibility</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Accessibility</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
 
         <div class="border-t py-4 text-center text-sm text-gray-500">
@@ -516,9 +531,7 @@
         </div>
     </footer>
 
-
-<script src="./js/main.js">
-</script>
+<script src="./js/main.js"></script>
 </body>
 
 </html>

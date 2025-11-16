@@ -2,172 +2,184 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - CommBank</title>
-    <!-- google fonts  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - CommBank</title>
+  <!-- google fonts  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../css/style.css">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/style.css">
 
-
-    <style>
-        .brand-yellow {
-            background: linear-gradient(90deg, #ffd24a, #ffca28);
-        }
-    </style>
+  <style>
+    .brand-yellow {
+      background: linear-gradient(90deg, #ffd24a, #ffca28);
+    }
+  </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
+  <!-- Skip to main content link for screen readers -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-yellow-500 text-black px-4 py-2 rounded z-50">Skip to main content</a>
 
-    <!-- ========= NAVBAR ========= -->
-  <header class="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm">
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Main header -->
-      <div class="flex justify-between items-center py-4">
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm">
-            <span class="font-bold text-sm text-black">CB</span>
-          </div>
-          <div class="flex flex-col">
-            <span class="font-bold text-xl text-gray-900">CommBank</span>
-            <span class="text-xs text-gray-500 -mt-1">Trusted Banking</span>
-          </div>
-        </div>
-
-        <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center gap-8">
-          <div class="flex gap-6">
-             <a href="../index.html" class="link">Home</a>
-            <a href="./about.html" class="link">About</a>
-            <a href="./services.html" class="link">Services</a>
-            <a href="./contact.html" class="link">Contact</a>
-          </div>
-          
-           <!-- Login Buttons -->
-            <div class="flex items-center gap-3 ml-6 pl-6 border-l border-gray-200"></div>
-            <a href="./pages/login.html" class="group relative bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black px-6 py-2.5 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 overflow-hidden">
-              <span class="relative z-10 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-4 w-4 group-hover:rotate-12 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 0a4 4 0 01-4 4H6a5 5 0 01-5-5v-2a5 5 0 015-5h1a4 4 0 014 4z" />
-              </svg>
-              <span class="text-white">
-                Login
-              </span>
-              </span>
-              <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </a>
-            </div>
-        </nav>
-
-        <!-- Mobile menu button -->
-        <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+  <!-- ========= NAVBAR ========= -->
+  <header class="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm" role="banner">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Main header -->
+    <div class="flex justify-between items-center py-4">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm" aria-hidden="true">
+      <span class="font-bold text-sm text-black">CB</span>
       </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white">
-        <div class="py-4 space-y-1">
-          <a href="../index.html" class="link">Home</a>
-          <a href="./about.html" class="link">About</a>
-          <a href="./services.html" class="link">Services</a>
-          <a href="./contact.html" class="link">Contact</a>
-          
-          <!-- Mobile CTA -->
-            <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
-            <a href="./login.html" class="block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-3 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm text-center">
-              Login
-            </a>
-            </div>
-        </div>
+      <div class="flex flex-col">
+      <span class="font-bold text-xl text-gray-900">CommBank</span>
+      <span class="text-xs text-gray-500 -mt-1">Trusted Banking</span>
       </div>
     </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex items-center gap-8" role="navigation" aria-label="Main navigation">
+      <div class="flex gap-6">
+       <a href="../index.html" class="link">Home</a>
+      <a href="./about.html" class="link">About</a>
+      <a href="./services.html" class="link">Services</a>
+      <a href="./contact.html" class="link">Contact</a>
+      </div>
+      
+       <!-- Login Buttons -->
+      <div class="flex items-center gap-3 ml-6 pl-6 border-l border-gray-200"></div>
+      <a href="./login.html" class="group relative bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black px-6 py-2.5 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 overflow-hidden" aria-label="Login to your account">
+        <span class="relative z-10 flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-4 w-4 group-hover:rotate-12 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 0a4 4 0 01-4 4H6a5 5 0 01-5-5v-2a5 5 0 015-5h1a4 4 0 014 4z" />
+        </svg>
+        <span class="text-white">
+        Login
+        </span>
+        </span>
+        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+      </a>
+      </div>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200" aria-label="Toggle mobile menu" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white" role="navigation" aria-label="Mobile navigation">
+    <div class="py-4 space-y-1">
+      <a href="../index.html" class="link">Home</a>
+      <a href="./about.html" class="link">About</a>
+      <a href="./services.html" class="link">Services</a>
+      <a href="./contact.html" class="link">Contact</a>
+      
+      <!-- Mobile CTA -->
+      <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
+      <a href="./login.html" class="block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-3 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm text-center" aria-label="Login to your account">
+        Login
+      </a>
+      </div>
+    </div>
+    </div>
+  </div>
   </header>
 
-    <!-- ========= LOGIN SECTION ========= -->
+  <!-- ========= LOGIN SECTION ========= -->
+  <main id="main-content" role="main">
     <section class="bg-gradient-to-r from-yellow-50 to-white min-h-screen flex items-center">
-        <div class="max-w-md md:max-w-lg lg:max-w-xl mx-auto w-full px-4">
-            <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 lg:p-12">
-                <div class="text-center mb-8">
-                    <div class="w-16 h-16 md:w-20 md:h-20 brand-yellow rounded-full flex justify-center items-center font-bold text-black mx-auto mb-4">
-                        <span class="text-lg md:text-xl">CB</span>
-                    </div>
-                    <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">Welcome Back</h1>
-                    <p class="text-gray-600 mt-2 text-base md:text-lg">Sign in to your CommBank account</p>
-                </div>
-
-                <form id="loginForm" class="space-y-6 md:space-y-8">
-                    <div>
-                        <label for="email" class="block text-sm md:text-base font-medium text-gray-700 mb-2">Email Address</label>
-                        <input type="email" id="email" name="email" required
-                            class="w-full border border-gray-300 rounded-md px-4 py-3 md:px-5 md:py-4 text-base focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-                            placeholder="Enter your email">
-                    </div>
-
-                    <div>
-                        <label for="password" class="block text-sm md:text-base font-medium text-gray-700 mb-2">Password</label>
-                        <input type="password" id="password" name="password" required
-                            class="w-full border border-gray-300 rounded-md px-4 py-3 md:px-5 md:py-4 text-base focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-                            placeholder="Enter your password">
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <label class="flex items-center">
-                            <input type="checkbox" class="rounded border-gray-300 active-link focus:ring-yellow-500">
-                            <span class="ml-2 text-sm md:text-base text-gray-600">Remember me</span>
-                        </label>
-                        <a href="#" class="text-sm md:text-base active-link hover:text-yellow-700">Forgot password?</a>
-                    </div>
-
-                    <button type="submit" 
-                        class="w-full bg-black text-white py-3 md:py-4 text-base md:text-lg rounded-md hover:opacity-90 transition duration-200">
-                        Sign In
-                    </button>
-                </form>
-
-                <div class="mt-6 md:mt-8 text-center">
-                    <p class="text-sm md:text-base text-gray-600">
-                        Don't have an account? 
-                        <a href="#" class="active-link hover:text-yellow-700 font-medium">Create account</a>
-                    </p>
-                </div>
-
-                <div class="mt-6 pt-6 border-t border-gray-200">
-                    <p class="text-xs md:text-sm text-gray-500 text-center">
-                        By signing in, you agree to our Terms of Service and Privacy Policy
-                    </p>
-                </div>
+      <div class="max-w-md md:max-w-lg lg:max-w-xl mx-auto w-full px-4">
+        <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 lg:p-12">
+          <div class="text-center mb-8">
+            <div class="w-16 h-16 md:w-20 md:h-20 brand-yellow rounded-full flex justify-center items-center font-bold text-black mx-auto mb-4" aria-hidden="true">
+              <span class="text-lg md:text-xl">CB</span>
             </div>
-        </div>
-    </section>
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">Welcome Back</h1>
+            <p class="text-gray-600 mt-2 text-base md:text-lg">Sign in to your CommBank account</p>
+          </div>
 
-    <!-- ========= FOOTER ========= -->
-    <footer class="bg-white border-t">
-        <div class="max-w-7xl mx-auto px-4 py-8 text-center">
-            <div class="flex justify-center items-center gap-3 mb-4">
-                <div class="w-8 h-8 brand-yellow rounded-full flex justify-center items-center font-bold text-black text-sm">
-                    CB
-                </div>
-                <span class="font-semibold">CommBank</span>
+          <form id="loginForm" class="space-y-6 md:space-y-8" novalidate>
+            <div>
+              <label for="email" class="block text-sm md:text-base font-medium text-gray-700 mb-2">Email Address</label>
+              <input type="email" id="email" name="email" required
+                class="w-full border border-gray-300 rounded-md px-4 py-3 md:px-5 md:py-4 text-base focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                placeholder="Enter your email"
+                autocomplete="email"
+                aria-describedby="email-error"
+                aria-invalid="false">
+              <div id="email-error" class="mt-1 text-sm text-red-600" role="alert" aria-live="polite"></div>
             </div>
-            <p class="text-sm text-gray-500">
-                © <span id="year"></span> CommBank — UI Prototype
+
+            <div>
+              <label for="password" class="block text-sm md:text-base font-medium text-gray-700 mb-2">Password</label>
+              <input type="password" id="password" name="password" required
+                class="w-full border border-gray-300 rounded-md px-4 py-3 md:px-5 md:py-4 text-base focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                aria-describedby="password-error"
+                aria-invalid="false">
+              <div id="password-error" class="mt-1 text-sm text-red-600" role="alert" aria-live="polite"></div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <label class="flex items-center">
+                <input type="checkbox" id="remember-me" class="rounded border-gray-300 active-link focus:ring-yellow-500" aria-describedby="remember-description">
+                <span id="remember-description" class="ml-2 text-sm md:text-base text-gray-600">Remember me</span>
+              </label>
+              <a href="#" class="text-sm md:text-base active-link hover:text-yellow-700" aria-label="Reset your password">Forgot password?</a>
+            </div>
+
+            <button type="submit" 
+              class="w-full bg-black text-white py-3 md:py-4 text-base md:text-lg rounded-md hover:opacity-90 transition duration-200"
+              aria-describedby="signin-description">
+              Sign In
+            </button>
+            <div id="signin-description" class="sr-only">Submit the login form to access your account</div>
+          </form>
+
+          <div class="mt-6 md:mt-8 text-center">
+            <p class="text-sm md:text-base text-gray-600">
+              Don't have an account? 
+              <a href="#" class="active-link hover:text-yellow-700 font-medium" aria-label="Create a new account">Create account</a>
             </p>
-        </div>
-    </footer>
+          </div>
 
+          <div class="mt-6 pt-6 border-t border-gray-200">
+            <p class="text-xs md:text-sm text-gray-500 text-center">
+              By signing in, you agree to our <a href="#" class="underline hover:text-gray-700">Terms of Service</a> and <a href="#" class="underline hover:text-gray-700">Privacy Policy</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========= FOOTER ========= -->
+  <footer class="bg-white border-t" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 py-8 text-center">
+      <div class="flex justify-center items-center gap-3 mb-4">
+        <div class="w-8 h-8 brand-yellow rounded-full flex justify-center items-center font-bold text-black text-sm" aria-hidden="true">
+          CB
+        </div>
+        <span class="font-semibold">CommBank</span>
+      </div>
+      <p class="text-sm text-gray-500">
+        © <span id="year"></span> CommBank — UI Prototype
+      </p>
+    </div>
+  </footer>
 
   <script src="../js/login.js"></script>
   <script src="../js/main.js"></script>
 
 </body>
 
-</html></div></p></svg>
+</html>
