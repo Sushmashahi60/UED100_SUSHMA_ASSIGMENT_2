@@ -25,73 +25,71 @@
     <!-- Skip to main content link for keyboard navigation -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white p-2 z-50">Skip to main content</a>
     
-    <!-- ========= NAVBAR ========= -->
-    <header class="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm" role="banner">
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Main header -->
-      <div class="flex justify-between items-center py-4">
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm" aria-hidden="true">
-            <span class="font-bold text-sm text-black">CB</span>
-          </div>
-          <div class="flex flex-col">
-            <span class="font-bold text-xl text-gray-900">CommBank</span>
-            <span class="text-xs text-gray-500 -mt-1">Trusted Banking</span>
-          </div>
+     <!-- ========= NAVBAR ========= -->
+<header class="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm" role="banner">
+    <nav class="max-w-7xl mx-auto px-4" role="navigation" aria-label="Main navigation">
+        <!-- Main header -->
+        <div class="flex justify-between items-center py-4">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex justify-center items-center shadow-sm" aria-hidden="true">
+                    <span class="font-bold text-sm text-black">CB</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl text-gray-900">CommBank</span>
+                    <span class="text-xs text-gray-500 -mt-1" aria-label="Tagline">Trusted Banking</span>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-8" aria-label="Primary navigation">
+                <ul class="flex gap-6" role="menubar">
+                    <li role="none"><a href="../index.html" class="link" role="menuitem">Home</a></li>
+                    <li role="none"><a href="./about.html" class="link" role="menuitem">About</a></li>
+                    <li role="none"><a href="./services.html" class="active-link" role="menuitem" aria-current="page">Services</a></li>
+                    <li role="none"><a href="./contact.html" class="link" role="menuitem">Contact</a></li>
+                </ul>
+                
+                <!-- Login Buttons -->
+                <div class="flex items-center gap-3 ml-6 pl-6 border-l border-gray-200">
+                    <a href="./login.html" class="group relative bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black px-6 py-2.5 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 overflow-hidden" aria-label="Login to your account">
+                        <span class="relative z-10 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-4 w-4 group-hover:rotate-12 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 0a4 4 0 01-4 4H6a5 5 0 01-5-5v-2a5 5 0 015-5h1a4 4 0 014 4z" />
+                        </svg>
+                        <span class="text-white">Login</span>
+                        </span>
+                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" aria-hidden="true"></div>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle mobile menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center gap-8" role="navigation" aria-label="Main navigation">
-          <div class="flex gap-6">
-            <a href="../index.html" class="link">Home</a>
-            <a href="./about.html" class="link">About</a>
-            <a href="./services.html" class="active-link" aria-current="page">Services</a>
-            <a href="./contact.html" class="link">Contact</a>
-          </div>
-          
-        <!-- Login Buttons -->
-            <div class="flex items-center gap-3 ml-6 pl-6 border-l border-gray-200"></div>
-            <a href="./login.html" class="group relative bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black px-6 py-2.5 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 overflow-hidden" aria-label="Login to your account">
-              <span class="relative z-10 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-4 w-4 group-hover:rotate-12 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 0a4 4 0 01-4 4H6a5 5 0 01-5-5v-2a5 5 0 015-5h1a4 4 0 014 4z" />
-              </svg>
-              <span class="text-white">
-                Login
-              </span>
-              </span>
-              <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </a>
-            </div>
-        </nav>
-
-        <!-- Mobile menu button -->
-        <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white" role="navigation" aria-label="Mobile navigation">
-        <div class="py-4 space-y-1">
-          <a href="../index.html" class="link">Home</a>
-          <a href="./about.html" class="link">About</a>
-          <a href="./services.html" class="active-link" aria-current="page">Services</a>
-          <a href="./contact.html" class="link">Contact</a>
-          
-          <!-- Mobile CTA -->
-            <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
-            <a href="./login.html" class="block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-3 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm text-center" aria-label="Login to your account">
-              Login
-            </a>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white" role="menu" aria-label="Mobile navigation">
+            <div class="py-4 space-y-1">
+                <a href="../index.html" class="link" role="menuitem">Home</a>
+                <a href="./about.html" class="link" role="menuitem">About</a>
+                <a href="./services.html" class="active-link" role="menuitem" aria-current="page">Services</a>
+                <a href="./contact.html" class="link" role="menuitem">Contact</a>
+                
+                 <!-- Mobile CTA -->
+                    <div class="px-4 py-3 space-y-2 border-t border-gray-100 mt-2 pt-4">
+                    <a href="./login.html" class="block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-3 rounded-lg text-sm font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 shadow-sm text-center" role="menuitem" aria-label="Login to your account">
+                        Login
+                    </a>
+                    </div>
             </div>
         </div>
-      </div>
-    </div>
-  </header>
+    </nav>
+</header>
 
     <!-- ========= HERO SECTION ========= -->
     <main id="main-content" role="main">
