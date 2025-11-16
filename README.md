@@ -38,7 +38,8 @@ UED100_YourName_Assessment2/
 ├── css/
 │   └── styles.css
 ├── js/
-│   └── script.js
+│   └── login.js
+│   └── main.js
 └── assets/
     └── images, icons
 ```
